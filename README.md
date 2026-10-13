@@ -22,7 +22,8 @@ retro-minimal-editorial/
 │   │   ├── fonts/                      # Self-hosted Newsreader & JetBrains Mono woff2
 │   │   ├── css/theme.css               # Components, window chrome, chips, dot leaders
 │   │   ├── css/color-scheme.css        # Dark mode custom property overrides
-│   │   └── js/editor.js                # Document setting sidebar TOC toggle
+│   │   ├── js/editor.js                # Document setting sidebar TOC toggle
+│   │   └── projects-showcase.png       # Projects showcase screenshot
 │   ├── templates/                      # index, front-page, home, single, single-project,
 │   │                                   # archive, archive-project, taxonomy-project_type, page, 404
 │   ├── parts/                          # header, footer, post-row, project-card
@@ -50,7 +51,11 @@ retro-minimal-editorial/
    - Newsreader variable serif with optical sizing (`opsz`) for high readability.
    - JetBrains Mono for UI metadata, dates, chips, and code blocks.
 2. **Window-Chrome Project Showcase:**
+
+   ![Projects and Experiments Showcase](theme/retro-minimal-editorial/assets/projects-showcase.png)
+
    - Neo-brutalist window card styling with `{slug}.exe` title bar and decorative controls.
+   - Interactive type filter chips (Client, Portfolio, Vibe-Coded) with custom taxonomy colors.
    - Hover transition to phosphor green title bar and `4px 4px 0 ink` offset shadow.
    - Fallback `> no preview_` with blinking cursor for projects without screenshots.
    - Full card clickability via accessible CSS stretched links.
