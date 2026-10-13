@@ -32,6 +32,8 @@ final class Project_CPT {
 
 	public static function init(): void {
 		add_action( 'init', array( self::class, 'register' ) );
+		add_action( 'init', array( self::class, 'register_meta' ) );
+		add_action( 'enqueue_block_editor_assets', array( self::class, 'enqueue_editor_assets' ) );
 	}
 
 	public static function register(): void {
@@ -139,5 +141,101 @@ final class Project_CPT {
 				update_term_meta( (int) $result['term_id'], Category_Colors::META_KEY, $colors[ $slug ] );
 			}
 		}
+	}
+
+	/**
+	 * Register post meta for project details.
+	 */
+	public static function register_meta(): void {
+		$fields = array(
+			'rmc_project_year'        => array(
+				'type'              => 'string',
+				'description'       => __( 'Project release or creation year.', 'retro-minimal-core' ),
+				'single'            => true,
+				'show_in_rest'      => true,
+				'default'           => '',
+				'sanitize_callback' => 'sanitize_text_field',
+			),
+			'rmc_project_status'      => array(
+				'type'              => 'string',
+				'description'       => __( 'Project status (e.g. Active / Live).', 'retro-minimal-core' ),
+				'single'            => true,
+				'show_in_rest'      => true,
+				'default'           => '',
+				'sanitize_callback' => 'sanitize_text_field',
+			),
+			'rmc_project_role'        => array(
+				'type'              => 'string',
+				'description'       => __( 'Author role (e.g. Design & Code).', 'retro-minimal-core' ),
+				'single'            => true,
+				'show_in_rest'      => true,
+				'default'           => '',
+				'sanitize_callback' => 'sanitize_text_field',
+			),
+			'rmc_project_live_url'    => array(
+				'type'              => 'string',
+				'description'       => __( 'Live demo URL.', 'retro-minimal-core' ),
+				'single'            => true,
+				'show_in_rest'      => true,
+				'default'           => '',
+				'sanitize_callback' => 'esc_url_raw',
+			),
+			'rmc_project_show_live'   => array(
+				'type'              => 'boolean',
+				'description'       => __( 'Whether to display the Live Demo button.', 'retro-minimal-core' ),
+				'single'            => true,
+				'show_in_rest'      => true,
+				'default'           => true,
+				'sanitize_callback' => static fn( $v ): string => rest_sanitize_boolean( $v ) ? '1' : '0',
+			),
+			'rmc_project_source_url'  => array(
+				'type'              => 'string',
+				'description'       => __( 'Source code repository URL.', 'retro-minimal-core' ),
+				'single'            => true,
+				'show_in_rest'      => true,
+				'default'           => '',
+				'sanitize_callback' => 'esc_url_raw',
+			),
+			'rmc_project_show_source' => array(
+				'type'              => 'boolean',
+				'description'       => __( 'Whether to display the Source Code button.', 'retro-minimal-core' ),
+				'single'            => true,
+				'show_in_rest'      => true,
+				'default'           => true,
+				'sanitize_callback' => static fn( $v ): string => rest_sanitize_boolean( $v ) ? '1' : '0',
+			),
+		);
+
+		foreach ( $fields as $key => $args ) {
+			register_post_meta(
+				self::POST_TYPE,
+				$key,
+				array_merge(
+					$args,
+					array(
+						'auth_callback' => static fn(): bool => current_user_can( 'edit_posts' ),
+					)
+				)
+			);
+		}
+	}
+
+	/**
+	 * Enqueue sidebar meta panel script in the block editor.
+	 */
+	public static function enqueue_editor_assets(): void {
+		$screen = get_current_screen();
+		if ( $screen && 'post' === $screen->base && self::POST_TYPE !== $screen->post_type ) {
+			return;
+		}
+
+		$url = plugin_dir_url( dirname( __FILE__ ) ) . 'assets/';
+		wp_enqueue_script(
+			'rmc-project-editor',
+			$url . 'project-editor.js',
+			array( 'wp-plugins', 'wp-editor', 'wp-edit-post', 'wp-components', 'wp-data', 'wp-element', 'wp-i18n' ),
+			VERSION,
+			true
+		);
 	}
 }

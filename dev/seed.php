@@ -185,54 +185,97 @@ foreach ( $sample_posts as $p ) {
 // 6. Seed Sample Projects
 $sample_projects = array(
 	array(
-		'title'   => 'Phosphor Canvas',
-		'slug'    => 'phosphor-canvas',
-		'type'    => 'vibe-coded',
-		'stack'   => array( 'TypeScript', 'Next.js', 'Claude' ),
-		'excerpt' => 'A real-time WebGL terminal and retro ASCII canvas generator built in a weekend.',
+		'title'       => 'Phosphor Canvas',
+		'slug'        => 'phosphor-canvas',
+		'type'        => 'vibe-coded',
+		'stack'       => array( 'TypeScript', 'Next.js', 'Claude' ),
+		'excerpt'     => 'A real-time WebGL terminal and retro ASCII canvas generator built in a weekend.',
+		'year'        => '2026',
+		'status'      => 'Active / Live',
+		'role'        => 'Design & Code',
+		'live_url'    => 'https://example.com/demo/phosphor',
+		'show_live'   => true,
+		'source_url'  => 'https://github.com/gerald/phosphor-canvas',
+		'show_source' => true,
 	),
 	array(
-		'title'   => 'Monospace Editorial',
-		'slug'    => 'monospace-editorial',
-		'type'    => 'portfolio',
-		'stack'   => array( 'WordPress', 'TypeScript' ),
-		'excerpt' => 'A minimal publishing platform for independent writers, featuring zero-build architecture.',
+		'title'       => 'Monospace Editorial',
+		'slug'        => 'monospace-editorial',
+		'type'        => 'portfolio',
+		'stack'       => array( 'WordPress', 'TypeScript' ),
+		'excerpt'     => 'A minimal publishing platform for independent writers, featuring zero-build architecture.',
+		'year'        => '2025',
+		'status'      => 'Active / Live',
+		'role'        => 'Full-Stack & Theme Author',
+		'live_url'    => 'https://example.com/demo/monospace',
+		'show_live'   => true,
+		'source_url'  => 'https://github.com/gerald/monospace-editorial',
+		'show_source' => true,
 	),
 	array(
-		'title'   => 'Starlight Analytics',
-		'slug'    => 'starlight-analytics',
-		'type'    => 'client',
-		'stack'   => array( 'Python', 'Supabase', 'Next.js' ),
-		'excerpt' => 'Privacy-first telemetry pipeline and dashboard with streaming server-sent events.',
+		'title'       => 'Starlight Analytics',
+		'slug'        => 'starlight-analytics',
+		'type'        => 'client',
+		'stack'       => array( 'Python', 'Supabase', 'Next.js' ),
+		'excerpt'     => 'Privacy-first telemetry pipeline and dashboard with streaming server-sent events.',
+		'year'        => '2025',
+		'status'      => 'Client Live',
+		'role'        => 'Data Architecture & Backend',
+		'live_url'    => 'https://example.com/starlight',
+		'show_live'   => true,
+		'source_url'  => '',
+		'show_source' => false,
 	),
 	array(
-		'title'   => 'Retro-Minimal Core',
-		'slug'    => 'retro-minimal-core-project',
-		'type'    => 'vibe-coded',
-		'stack'   => array( 'WordPress', 'PHP' ),
-		'excerpt' => 'Companion content layer plugin decoupling custom post types and category color metadata.',
+		'title'       => 'Retro-Minimal Core',
+		'slug'        => 'retro-minimal-core-project',
+		'type'        => 'vibe-coded',
+		'stack'       => array( 'WordPress', 'PHP' ),
+		'excerpt'     => 'Companion content layer plugin decoupling custom post types and category color metadata.',
+		'year'        => '2026',
+		'status'      => 'Open Source',
+		'role'        => 'Plugin Development',
+		'live_url'    => '',
+		'show_live'   => false,
+		'source_url'  => 'https://github.com/gerald/retro-minimal-core',
+		'show_source' => true,
 	),
 	array(
-		'title'   => 'Papercraft Reader',
-		'slug'    => 'papercraft-reader',
-		'type'    => 'portfolio',
-		'stack'   => array( 'Next.js', 'TypeScript' ),
-		'excerpt' => 'An offline-capable progressive web application for reading distraction-free essays.',
+		'title'       => 'Papercraft Reader',
+		'slug'        => 'papercraft-reader',
+		'type'        => 'portfolio',
+		'stack'       => array( 'Next.js', 'TypeScript' ),
+		'excerpt'     => 'An offline-capable progressive web application for reading distraction-free essays.',
+		'year'        => '2024',
+		'status'      => 'Archived',
+		'role'        => 'Product Design & Frontend',
+		'live_url'    => 'https://example.com/papercraft',
+		'show_live'   => true,
+		'source_url'  => 'https://github.com/gerald/papercraft-reader',
+		'show_source' => true,
 	),
 	array(
-		'title'   => 'Logos Design Studio',
-		'slug'    => 'logos-design-studio',
-		'type'    => 'client',
-		'stack'   => array( 'WordPress', 'Tailwind CSS' ),
-		'excerpt' => 'Bespoke corporate identity portfolio for a boutique architectural consulting firm.',
+		'title'       => 'Logos Design Studio',
+		'slug'        => 'logos-design-studio',
+		'type'        => 'client',
+		'stack'       => array( 'WordPress', 'Tailwind CSS' ),
+		'excerpt'     => 'Bespoke corporate identity portfolio for a boutique architectural consulting firm.',
+		'year'        => '2024',
+		'status'      => 'Completed',
+		'role'        => 'Brand Identity & Web Dev',
+		'live_url'    => 'https://example.com/logos',
+		'show_live'   => true,
+		'source_url'  => '',
+		'show_source' => false,
 	),
 );
 
 foreach ( $sample_projects as $proj ) {
 	$existing = get_page_by_path( $proj['slug'], OBJECT, 'project' );
+	$proj_id = $existing ? $existing->ID : 0;
+
 	if ( ! $existing ) {
-		$content = '<!-- wp:pattern {"slug":"retro-minimal/project-meta"} /-->' . "\n";
-		$content .= '<!-- wp:paragraph --><p>' . esc_html( $proj['excerpt'] ) . '</p><!-- /wp:paragraph -->' . "\n";
+		$content = '<!-- wp:paragraph --><p>' . esc_html( $proj['excerpt'] ) . '</p><!-- /wp:paragraph -->' . "\n";
 		$content .= '<!-- wp:heading --><h2>Overview &amp; Objectives</h2><!-- /wp:heading -->' . "\n";
 		$content .= '<!-- wp:paragraph --><p>Case study walkthrough describing technical decisions, performance optimizations, and design philosophy behind ' . esc_html( $proj['title'] ) . '.</p><!-- /wp:paragraph -->';
 
@@ -252,6 +295,16 @@ foreach ( $sample_projects as $proj ) {
 			wp_set_object_terms( $proj_id, $proj['stack'], 'project_stack' );
 			echo "  -> Project: {$proj['title']} ({$proj['type']})\n";
 		}
+	}
+
+	if ( $proj_id ) {
+		update_post_meta( $proj_id, 'rmc_project_year', $proj['year'] ?? '' );
+		update_post_meta( $proj_id, 'rmc_project_status', $proj['status'] ?? '' );
+		update_post_meta( $proj_id, 'rmc_project_role', $proj['role'] ?? '' );
+		update_post_meta( $proj_id, 'rmc_project_live_url', $proj['live_url'] ?? '' );
+		update_post_meta( $proj_id, 'rmc_project_show_live', (bool) ( $proj['show_live'] ?? true ) );
+		update_post_meta( $proj_id, 'rmc_project_source_url', $proj['source_url'] ?? '' );
+		update_post_meta( $proj_id, 'rmc_project_show_source', (bool) ( $proj['show_source'] ?? true ) );
 	}
 }
 

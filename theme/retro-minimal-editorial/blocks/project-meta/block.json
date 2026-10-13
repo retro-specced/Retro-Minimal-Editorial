@@ -1,0 +1,23 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "retro-minimal/project-meta",
+	"title": "Project Meta",
+	"category": "theme",
+	"icon": "info-outline",
+	"description": "Displays live demo/source buttons and metadata (Year, Status, Role) for projects.",
+	"keywords": [ "project", "meta", "year", "status", "role", "demo" ],
+	"textdomain": "retro-minimal-editorial",
+	"usesContext": [ "postId", "postType" ],
+	"supports": {
+		"html": false,
+		"multiple": true,
+		"reusable": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"render": "file:./render.php"
+}
