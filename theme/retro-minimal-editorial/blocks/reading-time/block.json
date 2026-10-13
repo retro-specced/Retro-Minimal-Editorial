@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "retro-minimal/reading-time",
+	"title": "Reading Time",
+	"category": "theme",
+	"icon": "clock",
+	"description": "Displays the estimated reading time based on ~230 wpm.",
+	"keywords": [ "reading", "time", "minutes", "read" ],
+	"textdomain": "retro-minimal-editorial",
+	"usesContext": [ "postId", "postType" ],
+	"supports": {
+		"html": false,
+		"multiple": true,
+		"reusable": false,
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true
+		},
+		"color": {
+			"text": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"render": "file:./render.php"
+}

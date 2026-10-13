@@ -1,0 +1,76 @@
+/* Retro-Minimal Core: term label color field */
+
+.rmc-swatches {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin: 10px 0 8px;
+	max-width: 520px;
+}
+
+.rmc-swatch {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 3px 8px 3px 4px;
+	font: 500 11px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	color: #1a1a1a;
+	background: #fff;
+	border: 1px solid #1a1a1a;
+	border-radius: 0;
+	cursor: pointer;
+}
+
+.rmc-swatch::before {
+	content: "";
+	width: 14px;
+	height: 14px;
+	background: var(--swatch);
+	border: 1px solid #1a1a1a;
+}
+
+.rmc-swatch:hover,
+.rmc-swatch[aria-pressed="true"] {
+	background: #1a1a1a;
+	color: #f4f0e6;
+}
+
+.rmc-swatch:focus-visible {
+	outline: 2px solid #157030;
+	outline-offset: 2px;
+}
+
+.rmc-preview {
+	display: inline-block;
+	padding: 1px 8px;
+	font: 600 12px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	letter-spacing: 0.04em;
+	color: #1a1a1a;
+	background: var(--swatch, #c9c6bd);
+	border: 1px solid #1a1a1a;
+}
+
+.rmc-contrast-warning {
+	color: #8a2a00;
+	font-weight: 600;
+}
+
+.column-rmc_color {
+	width: 2.5em;
+	text-align: center;
+}
+
+.rmc-col-swatch {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	background: var(--swatch);
+	border: 1px solid #1a1a1a;
+	vertical-align: middle;
+}
+
+.rmc-col-swatch.is-default {
+	opacity: 0.45;
+}

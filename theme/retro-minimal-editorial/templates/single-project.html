@@ -1,0 +1,69 @@
+<!-- wp:template-part {"slug":"header","theme":"retro-minimal-editorial","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--60)">
+	<!-- Window-Chrome Hero Frame for Screenshot -->
+	<!-- wp:group {"className":"is-style-window","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|40"}}},"layout":{"type":"default"}} -->
+	<div class="wp-block-group is-style-window" style="margin-bottom:var(--wp--preset--spacing--40)">
+		<div class="rme-window-titlebar">
+			<div class="rme-window-titlebar__slug">
+				<span aria-hidden="true">&#9632;</span>
+				<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"retro-minimal/post-slug"}}},"style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"var:preset|font-size|x-small"}}} -->
+				<p style="font-family:var(--wp--preset--font-family--mono);font-size:var(--wp--preset--font-size--x-small)">project.exe</p>
+				<!-- /wp:paragraph -->
+			</div>
+			<span class="rme-window-titlebar__controls" aria-hidden="true">_ &#9633; &times;</span>
+		</div>
+		<!-- wp:post-featured-image {"aspectRatio":"16/9"} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- Project Title -->
+	<!-- wp:post-title {"level":1,"style":{"typography":{"fontFamily":"var:preset|font-family|serif","fontSize":"var:preset|font-size|xx-large","lineHeight":"1.1"},"spacing":{"margin":{"bottom":"var:preset|spacing|20"}}}} /-->
+
+	<!-- Type Label & Stack Tags -->
+	<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","gap":"var:preset|spacing|20"},"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|40"}}}} -->
+	<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--40)">
+		<!-- wp:post-terms {"term":"project_type"} /-->
+		<!-- wp:post-terms {"term":"project_stack","separator":" · "} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- Project Meta Actions & Details -->
+	<!-- wp:pattern {"slug":"retro-minimal/project-meta"} /-->
+
+	<!-- Post Content -->
+	<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+
+	<!-- Stack Tags & Footer -->
+	<!-- wp:group {"style":{"spacing":{"margin":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|50"}},"border":{"top":{"color":"var:preset|color|rule","style":"solid","width":"1px"},"bottom":{"color":"var:preset|color|rule","style":"solid","width":"1px"}},"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}},"layout":{"type":"constrained"}} -->
+	<div class="wp-block-group" style="border-top-color:var(--wp--preset--color--rule);border-top-style:solid;border-top-width:1px;border-bottom-color:var(--wp--preset--color--rule);border-bottom-style:solid;border-bottom-width:1px;margin-top:var(--wp--preset--spacing--60);margin-bottom:var(--wp--preset--spacing--50);padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30)">
+		<!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between"}} -->
+		<div class="wp-block-group">
+			<!-- wp:post-navigation-link {"type":"previous","label":"\u2190 %title"} /-->
+			<!-- wp:post-navigation-link {"type":"next","label":"%title \u2192"} /-->
+		</div>
+		<!-- /wp:group -->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- Other Projects Query Loop -->
+	<!-- wp:group {"layout":{"type":"constrained"}} -->
+	<div class="wp-block-group">
+		<!-- wp:heading {"level":2,"style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"var:preset|font-size|small","textTransform":"uppercase","letterSpacing":"0.04em"},"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}}} -->
+		<h2 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--mono);font-size:var(--wp--preset--font-size--small);letter-spacing:0.04em;text-transform:uppercase">// Other Projects</h2>
+		<!-- /wp:heading -->
+
+		<!-- wp:query {"query":{"perPage":3,"pages":0,"offset":0,"postType":"project","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"rmeExcludeCurrent":true}} -->
+		<div class="wp-block-query">
+			<!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
+				<!-- wp:template-part {"slug":"project-card","theme":"retro-minimal-editorial"} /-->
+			<!-- /wp:post-template -->
+		</div>
+		<!-- /wp:query -->
+	</div>
+	<!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","theme":"retro-minimal-editorial","tagName":"footer"} /-->

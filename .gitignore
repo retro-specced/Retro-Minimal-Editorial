@@ -1,0 +1,16 @@
+# Local WordPress & wp-env
+.wp-env/
+.wp-env.override.json
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Logs & scratch
+*.log
+scratch/

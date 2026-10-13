@@ -1,0 +1,411 @@
+/**
+ * Retro-Minimal Editorial: Component & Design System Styles
+ */
+
+/* ------------------------------------------------------------------ */
+/* 1. Global Resets & Typography                                      */
+/* ------------------------------------------------------------------ */
+
+*:focus-visible {
+	outline: 2px solid var(--wp--preset--color--accent);
+	outline-offset: 2px;
+}
+
+::selection {
+	background-color: var(--wp--preset--color--highlight);
+	color: var(--wp--preset--color--ink);
+}
+
+a {
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
+	transition: color 0.15s ease;
+}
+
+a:hover {
+	color: var(--wp--preset--color--accent);
+}
+
+/* ------------------------------------------------------------------ */
+/* 2. Category & Taxonomy Chips (.rmc-chip)                           */
+/* ------------------------------------------------------------------ */
+
+.rmc-chip,
+a.rmc-chip {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.12em 0.55em;
+	font-family: var(--wp--preset--font-family--mono);
+	font-size: var(--wp--preset--font-size--x-small);
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	line-height: 1.4;
+	color: #1a1a1a !important; /* Chips always retain dark ink text on color backgrounds */
+	background-color: var(--rmc-chip, #c9c6bd) !important;
+	border: 1px solid var(--wp--preset--color--rule);
+	border-radius: 0;
+	text-decoration: none !important;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+
+.rmc-chip:hover {
+	opacity: 0.9;
+	color: #1a1a1a !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* 3. Window-Chrome Project Card (.is-style-window)                   */
+/* ------------------------------------------------------------------ */
+
+.wp-block-group.is-style-window {
+	position: relative;
+	border: 1px solid var(--wp--preset--color--rule);
+	background-color: var(--wp--preset--color--paper);
+	transition: box-shadow 0.15s ease, transform 0.15s ease;
+	display: flex;
+	flex-direction: column;
+}
+
+.wp-block-group.is-style-window:hover {
+	box-shadow: 4px 4px 0 0 var(--wp--preset--color--ink);
+	transform: translate(-1px, -1px);
+}
+
+/* Title Bar */
+.rme-window-titlebar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.35rem 0.65rem;
+	background-color: var(--wp--preset--color--ink);
+	color: var(--wp--preset--color--paper);
+	font-family: var(--wp--preset--font-family--mono);
+	font-size: var(--wp--preset--font-size--x-small);
+	font-weight: 500;
+	border-bottom: 1px solid var(--wp--preset--color--rule);
+	letter-spacing: 0.02em;
+	transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.rme-window-titlebar__slug {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.rme-window-titlebar__controls {
+	display: flex;
+	gap: 0.35rem;
+	font-family: var(--wp--preset--font-family--mono);
+	user-select: none;
+}
+
+/* Title bar turns phosphor green on hover */
+.wp-block-group.is-style-window:hover .rme-window-titlebar {
+	background-color: var(--wp--preset--color--accent-glow);
+	color: #1a1a1a;
+}
+
+/* Stretched Link: Makes entire card clickable via post title */
+.wp-block-group.is-style-window .wp-block-post-title a::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: 2;
+}
+
+/* Secondary direct links stay above stretched link */
+.wp-block-group.is-style-window .rme-external-link,
+.wp-block-group.is-style-window .rmc-chip,
+.wp-block-group.is-style-window .wp-block-post-terms a {
+	position: relative;
+	z-index: 3;
+}
+
+/* ------------------------------------------------------------------ */
+/* 4. Screenshot Fallback (> no preview_)                             */
+/* ------------------------------------------------------------------ */
+
+.rme-screenshot-placeholder {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 180px;
+	aspect-ratio: 16 / 9;
+	background-color: var(--wp--preset--color--surface);
+	border-bottom: 1px solid var(--wp--preset--color--rule);
+	color: var(--wp--preset--color--muted);
+	font-family: var(--wp--preset--font-family--mono);
+	font-size: var(--wp--preset--font-size--small);
+}
+
+.rme-screenshot-placeholder__inner {
+	display: flex;
+	align-items: center;
+	gap: 2px;
+}
+
+.rme-blink {
+	display: inline-block;
+	font-weight: 700;
+	color: var(--wp--preset--color--accent);
+	animation: rme-cursor-blink 1s steps(2, start) infinite;
+}
+
+@keyframes rme-cursor-blink {
+	to {
+		visibility: hidden;
+	}
+}
+
+/* ------------------------------------------------------------------ */
+/* 5. Post Rows & Dot Leaders                                         */
+/* ------------------------------------------------------------------ */
+
+.rme-post-row {
+	border-bottom: 1px solid var(--wp--preset--color--rule);
+	padding-top: var(--wp--preset--spacing--30);
+	padding-bottom: var(--wp--preset--spacing--30);
+	transition: background-color 0.15s ease;
+}
+
+.rme-post-row__main {
+	display: flex;
+	align-items: baseline;
+	flex-wrap: nowrap;
+	gap: 0.75rem;
+}
+
+.rme-dot-leader {
+	flex-grow: 1;
+	border-bottom: 1px dotted var(--wp--preset--color--muted);
+	margin-bottom: 0.35rem;
+	min-width: 2rem;
+}
+
+@media (max-width: 640px) {
+	.rme-post-row__main {
+		flex-wrap: wrap;
+		gap: 0.4rem;
+	}
+	.rme-dot-leader {
+		display: none;
+	}
+}
+
+/* ------------------------------------------------------------------ */
+/* 6. Block Style Variations                                          */
+/* ------------------------------------------------------------------ */
+
+/* Group: Bordered */
+.wp-block-group.is-style-bordered {
+	border: 1px solid var(--wp--preset--color--rule);
+	padding: var(--wp--preset--spacing--40);
+}
+
+/* Group: Terminal */
+.wp-block-group.is-style-terminal {
+	border: 1px solid var(--wp--preset--color--rule);
+	background-color: var(--wp--preset--color--surface);
+	padding: var(--wp--preset--spacing--40);
+	font-family: var(--wp--preset--font-family--mono);
+}
+
+/* Image: Bordered */
+.wp-block-image.is-style-bordered img {
+	border: 1px solid var(--wp--preset--color--rule);
+}
+
+/* Separator: Dashed */
+.wp-block-separator.is-style-dashed {
+	border-top: 1px dashed var(--wp--preset--color--rule);
+	border-bottom: none;
+}
+
+/* Separator: Asterisks (* * *) */
+.wp-block-separator.is-style-asterisks {
+	border: none !important;
+	text-align: center;
+	height: auto;
+	margin: 2rem auto;
+}
+.wp-block-separator.is-style-asterisks::before {
+	content: "*  *  *";
+	font-family: var(--wp--preset--font-family--mono);
+	font-size: var(--wp--preset--font-size--small);
+	letter-spacing: 0.5em;
+	color: var(--wp--preset--color--muted);
+}
+
+/* List: Link List */
+.wp-block-list.is-style-link-list {
+	list-style: none;
+	padding-left: 0;
+	font-family: var(--wp--preset--font-family--mono);
+	font-size: var(--wp--preset--font-size--small);
+}
+
+.wp-block-list.is-style-link-list li {
+	border-bottom: 1px dotted var(--wp--preset--color--muted);
+	padding: 0.45rem 0;
+}
+
+/* Button: Ghost */
+.wp-block-button.is-style-ghost .wp-block-button__link {
+	background: transparent !important;
+	color: var(--wp--preset--color--ink) !important;
+	border: 1px solid var(--wp--preset--color--rule);
+}
+
+.wp-block-button.is-style-ghost .wp-block-button__link:hover {
+	background: var(--wp--preset--color--accent-glow) !important;
+	color: #1a1a1a !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* 7. Theme Toggle Block (.rme-theme-toggle)                          */
+/* ------------------------------------------------------------------ */
+
+.rme-theme-toggle {
+	background: transparent;
+	color: var(--wp--preset--color--ink);
+	border: 1px solid var(--wp--preset--color--rule);
+	padding: 0.25rem 0.65rem;
+	font-family: var(--wp--preset--font-family--mono);
+	font-size: var(--wp--preset--font-size--x-small);
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	cursor: pointer;
+	border-radius: 0;
+	transition: all 0.15s ease;
+}
+
+.rme-theme-toggle:hover {
+	background-color: var(--wp--preset--color--accent-glow);
+	color: #1a1a1a;
+	box-shadow: 2px 2px 0 0 var(--wp--preset--color--ink);
+}
+
+/* ------------------------------------------------------------------ */
+/* 8. Table of Contents (.rme-toc)                                    */
+/* ------------------------------------------------------------------ */
+
+.rme-toc {
+	border: 1px solid var(--wp--preset--color--rule);
+	background-color: var(--wp--preset--color--surface);
+	padding: 1rem 1.25rem;
+	font-family: var(--wp--preset--font-family--mono);
+	font-size: var(--wp--preset--font-size--x-small);
+	margin: 1.5rem 0 2rem;
+}
+
+.rme-toc details summary {
+	cursor: pointer;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	user-select: none;
+}
+
+.rme-toc__list {
+	list-style: none;
+	padding-left: 0;
+	margin: 0.75rem 0 0;
+}
+
+.rme-toc__item {
+	padding: 0.25rem 0;
+	border-bottom: 1px dotted var(--wp--preset--color--rule);
+}
+
+.rme-toc__item:last-child {
+	border-bottom: none;
+}
+
+.rme-toc__item--h3 {
+	padding-left: 1rem;
+}
+
+.rme-toc__item a {
+	color: var(--wp--preset--color--ink);
+	text-decoration: none;
+}
+
+.rme-toc__item a[aria-current="true"],
+.rme-toc__item a:hover {
+	color: var(--wp--preset--color--accent);
+	font-weight: 700;
+	text-decoration: underline;
+}
+
+/* ------------------------------------------------------------------ */
+/* 9. Mobile Navigation Overlay                                       */
+/* ------------------------------------------------------------------ */
+
+.wp-block-navigation__responsive-container.is-menu-open {
+	background-color: var(--wp--preset--color--paper) !important;
+	color: var(--wp--preset--color--ink) !important;
+	border: 2px solid var(--wp--preset--color--rule);
+	padding: 2rem !important;
+}
+
+.wp-block-navigation__responsive-container-close {
+	font-family: var(--wp--preset--font-family--mono) !important;
+	border: 1px solid var(--wp--preset--color--rule) !important;
+	background: var(--wp--preset--color--paper) !important;
+	color: var(--wp--preset--color--ink) !important;
+	border-radius: 0 !important;
+	padding: 0.4rem 0.8rem !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* 10. Filter Rows (.rme-filter-row)                                  */
+/* ------------------------------------------------------------------ */
+
+.rme-filter-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+	padding-bottom: 1.25rem;
+	margin-bottom: 1.5rem;
+	border-bottom: 1px solid var(--wp--preset--color--rule);
+	font-family: var(--wp--preset--font-family--mono);
+	font-size: var(--wp--preset--font-size--x-small);
+}
+
+.rme-filter-row a {
+	padding: 0.2em 0.6em;
+	border: 1px solid var(--wp--preset--color--rule);
+	text-decoration: none;
+	color: var(--wp--preset--color--ink);
+	background: var(--wp--preset--color--paper);
+}
+
+.rme-filter-row a.is-active,
+.rme-filter-row a:hover {
+	background-color: var(--wp--preset--color--ink);
+	color: var(--wp--preset--color--paper);
+}
+
+/* ------------------------------------------------------------------ */
+/* 11. Reduced Motion Accessibility                                   */
+/* ------------------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+	.rme-blink {
+		animation: none !important;
+	}
+}

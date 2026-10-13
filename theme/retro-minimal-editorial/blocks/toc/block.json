@@ -1,0 +1,23 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "retro-minimal/toc",
+	"title": "Table of Contents (Retro)",
+	"category": "theme",
+	"icon": "list-view",
+	"description": "Automatic table of contents built from the post's H2/H3 headings. Hidden when a post has fewer than the minimum number of headings, or when \"Hide table of contents\" is on.",
+	"keywords": [ "toc", "contents", "headings" ],
+	"textdomain": "retro-minimal-editorial",
+	"usesContext": [ "postId", "postType" ],
+	"attributes": {
+		"minHeadings": { "type": "number", "default": 3 }
+	},
+	"supports": {
+		"html": false,
+		"multiple": false,
+		"reusable": false
+	},
+	"editorScript": "file:./index.js",
+	"viewScript": "file:./view.js",
+	"render": "file:./render.php"
+}

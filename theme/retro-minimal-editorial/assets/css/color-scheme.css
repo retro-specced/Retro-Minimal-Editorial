@@ -1,0 +1,42 @@
+/**
+ * Retro-Minimal Editorial: Color Scheme (Dark Mode)
+ *
+ * Overrides the theme.json CSS custom properties.
+ * - Follows OS dark mode when no manual preference is stored.
+ * - Follows explicit user preference when data-theme is set on <html>.
+ */
+
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) {
+		--wp--preset--color--paper: #161512;
+		--wp--preset--color--ink: #E8E4D8;
+		--wp--preset--color--muted: #A09C92;
+		--wp--preset--color--rule: #77726A;
+		--wp--preset--color--surface: #1F1E1A;
+		--wp--preset--color--accent: #3DFF6E;
+		--wp--preset--color--accent-glow: #3DFF6E;
+		--wp--preset--color--highlight: #24502F;
+	}
+}
+
+:root[data-theme="dark"] {
+	--wp--preset--color--paper: #161512;
+	--wp--preset--color--ink: #E8E4D8;
+	--wp--preset--color--muted: #A09C92;
+	--wp--preset--color--rule: #77726A;
+	--wp--preset--color--surface: #1F1E1A;
+	--wp--preset--color--accent: #3DFF6E;
+	--wp--preset--color--accent-glow: #3DFF6E;
+	--wp--preset--color--highlight: #24502F;
+}
+
+:root[data-theme="light"] {
+	--wp--preset--color--paper: #F4F0E6;
+	--wp--preset--color--ink: #1A1A1A;
+	--wp--preset--color--muted: #5C5A55;
+	--wp--preset--color--rule: #1A1A1A;
+	--wp--preset--color--surface: #EBE6D9;
+	--wp--preset--color--accent: #157030;
+	--wp--preset--color--accent-glow: #33FF66;
+	--wp--preset--color--highlight: #B9F3C6;
+}

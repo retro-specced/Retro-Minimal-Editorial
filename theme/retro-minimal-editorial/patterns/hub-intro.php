@@ -1,0 +1,27 @@
+<?php
+/**
+ * Title: Hub Intro
+ * Slug: retro-minimal/hub-intro
+ * Categories: retro-minimal
+ * Description: Header intro section with name, bio, and quick links.
+ */
+?>
+<!-- wp:group {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--60)">
+	<!-- wp:heading {"level":1,"style":{"typography":{"fontFamily":"var:preset|font-family|serif","fontSize":"var:preset|font-size|xx-large","lineHeight":"1.05"}}} -->
+	<h1 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--serif);font-size:var(--wp--preset--font-size--xx-large);line-height:1.05">Gerald</h1>
+	<!-- /wp:heading -->
+
+	<!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|medium","lineHeight":"1.4"},"color":{"text":"var:preset|color|muted"}}} -->
+	<p class="has-muted-color has-text-color" style="font-size:var(--wp--preset--font-size--medium);line-height:1.4">Software engineer &amp; designer building thoughtful tools, editorial interfaces, and small-web experiments.</p>
+	<!-- /wp:paragraph -->
+
+	<!-- wp:list {"className":"is-style-link-list"} -->
+	<ul class="wp-block-list is-style-link-list">
+		<li>&rarr; GitHub ...................................... <a href="https://github.com/gerald">github.com/gerald</a></li>
+		<li>&rarr; Writing ..................................... <a href="/blog/">Read latest posts</a></li>
+		<li>&rarr; Projects .................................... <a href="/projects/">View showcase</a></li>
+	</ul>
+	<!-- /wp:list -->
+</div>
+<!-- /wp:group -->

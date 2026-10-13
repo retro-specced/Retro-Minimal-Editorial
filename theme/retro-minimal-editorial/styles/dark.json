@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Phosphor Dark",
+	"settings": {
+		"color": {
+			"palette": [
+				{ "slug": "paper", "name": "Paper", "color": "#161512" },
+				{ "slug": "ink", "name": "Ink", "color": "#E8E4D8" },
+				{ "slug": "muted", "name": "Muted", "color": "#A09C92" },
+				{ "slug": "rule", "name": "Rule", "color": "#77726A" },
+				{ "slug": "surface", "name": "Surface", "color": "#1F1E1A" },
+				{ "slug": "accent", "name": "Phosphor Ink", "color": "#3DFF6E" },
+				{ "slug": "accent-glow", "name": "Phosphor Glow", "color": "#3DFF6E" },
+				{ "slug": "highlight", "name": "Highlight", "color": "#24502F" },
+				{ "slug": "swatch-phosphor", "name": "Phosphor (chip)", "color": "#9CF2B0" },
+				{ "slug": "swatch-cyan", "name": "Terminal Cyan", "color": "#8ED8DB" },
+				{ "slug": "swatch-amber", "name": "CRT Amber", "color": "#F5C451" },
+				{ "slug": "swatch-manila", "name": "Manila", "color": "#EAD9A6" },
+				{ "slug": "swatch-lavender", "name": "Lavender", "color": "#C9BCF2" },
+				{ "slug": "swatch-bubblegum", "name": "Bubblegum", "color": "#F4A9C8" },
+				{ "slug": "swatch-orange", "name": "Signal Orange", "color": "#F59E6B" },
+				{ "slug": "swatch-cobalt", "name": "Cobalt Wash", "color": "#A7BCF7" },
+				{ "slug": "swatch-platinum", "name": "Platinum", "color": "#C9C6BD" }
+			]
+		}
+	}
+}

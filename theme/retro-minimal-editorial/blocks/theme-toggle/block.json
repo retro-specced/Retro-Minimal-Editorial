@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "retro-minimal/theme-toggle",
+	"title": "Theme Toggle",
+	"category": "theme",
+	"icon": "lightbulb",
+	"description": "Switch between light and dark mode. Respects system preference by default.",
+	"keywords": [ "theme", "dark", "light", "toggle", "mode" ],
+	"textdomain": "retro-minimal-editorial",
+	"supports": {
+		"html": false,
+		"multiple": false,
+		"reusable": false
+	},
+	"editorScript": "file:./index.js",
+	"viewScript": "file:./view.js",
+	"render": "file:./render.php"
+}
