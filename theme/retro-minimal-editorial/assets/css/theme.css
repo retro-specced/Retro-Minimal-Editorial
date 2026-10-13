@@ -66,6 +66,10 @@ a.rmc-chip {
 	transition: box-shadow 0.15s ease, transform 0.15s ease;
 	display: flex;
 	flex-direction: column;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	overflow: hidden; /* Constrains screenshot, titlebar, and body strictly within card bounds */
 }
 
 .wp-block-group.is-style-window:hover {
@@ -86,6 +90,10 @@ a.rmc-chip {
 	font-weight: 500;
 	border-bottom: 1px solid var(--wp--preset--color--rule);
 	letter-spacing: 0.02em;
+	width: 100%;
+	max-width: 100%;
+	min-width: 0;
+	box-sizing: border-box;
 	transition: background-color 0.15s ease, color 0.15s ease;
 }
 
@@ -93,6 +101,20 @@ a.rmc-chip {
 	display: flex;
 	align-items: center;
 	gap: 0.4rem;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.rme-window-titlebar__slug p,
+.rme-window-titlebar p {
+	margin: 0 !important;
+	padding: 0 !important;
+	line-height: 1.2 !important;
+	font-size: inherit !important;
+	font-family: inherit !important;
+	color: inherit !important;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -103,12 +125,18 @@ a.rmc-chip {
 	gap: 0.35rem;
 	font-family: var(--wp--preset--font-family--mono);
 	user-select: none;
+	flex-shrink: 0;
+	white-space: nowrap;
+	margin-left: 0.5rem;
 }
 
 /* Title bar turns phosphor green on hover */
 .wp-block-group.is-style-window:hover .rme-window-titlebar {
 	background-color: var(--wp--preset--color--accent-glow);
 	color: #1a1a1a;
+}
+.wp-block-group.is-style-window:hover .rme-window-titlebar p {
+	color: #1a1a1a !important;
 }
 
 /* Stretched Link: Makes entire card clickable via post title */
@@ -128,26 +156,59 @@ a.rmc-chip {
 }
 
 /* ------------------------------------------------------------------ */
-/* 4. Screenshot Fallback (> no preview_)                             */
+/* 4. Screenshot Fallback & Featured Images                           */
 /* ------------------------------------------------------------------ */
+
+.wp-block-group.is-style-window .wp-block-post-featured-image {
+	margin: 0 !important;
+	padding: 0 !important;
+	width: 100% !important;
+	max-width: 100% !important;
+	box-sizing: border-box !important;
+	aspect-ratio: 16 / 9;
+	overflow: hidden;
+}
+
+.wp-block-group.is-style-window .wp-block-post-featured-image img {
+	width: 100% !important;
+	height: 100% !important;
+	max-width: 100% !important;
+	object-fit: cover;
+	display: block;
+	border-bottom: 1px solid var(--wp--preset--color--rule);
+	box-sizing: border-box;
+}
 
 .rme-screenshot-placeholder {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-height: 180px;
+	width: 100% !important;
+	max-width: 100% !important;
+	box-sizing: border-box !important;
 	aspect-ratio: 16 / 9;
 	background-color: var(--wp--preset--color--surface);
 	border-bottom: 1px solid var(--wp--preset--color--rule);
 	color: var(--wp--preset--color--muted);
 	font-family: var(--wp--preset--font-family--mono);
 	font-size: var(--wp--preset--font-size--small);
+	overflow: hidden;
 }
 
 .rme-screenshot-placeholder__inner {
 	display: flex;
 	align-items: center;
 	gap: 2px;
+	padding: 1rem;
+	text-align: center;
+}
+
+.rme-screenshot-placeholder code {
+	background: transparent !important;
+	border: none !important;
+	padding: 0 !important;
+	font-size: inherit;
+	color: inherit;
 }
 
 .rme-blink {
@@ -161,6 +222,18 @@ a.rmc-chip {
 	to {
 		visibility: hidden;
 	}
+}
+
+/* Grid tracks: prevent items from blowing out in CSS Grid */
+.wp-block-post-template.is-layout-grid {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+}
+
+.wp-block-post-template.is-layout-grid > li {
+	min-width: 0;
+	list-style: none;
 }
 
 /* ------------------------------------------------------------------ */
