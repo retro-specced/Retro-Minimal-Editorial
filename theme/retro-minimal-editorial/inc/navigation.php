@@ -55,6 +55,11 @@ add_action(
  * @param int $menu_id The menu ID being updated (0 to pick assigned or first menu).
  */
 function sync_classic_menu_to_block_navigation( int $menu_id = 0 ): void {
+	// Only users with theme customization permissions should sync navigation.
+	if ( ! current_user_can( 'edit_theme_options' ) ) {
+		return;
+	}
+
 	// Prevent recursive sync loops.
 	static $syncing = false;
 	if ( $syncing ) {
@@ -184,7 +189,7 @@ add_action( 'after_switch_theme', 'RetroMinimalEditorial\\sync_classic_menu_to_b
 add_action(
 	'init',
 	static function (): void {
-		if ( is_admin() ) {
+		if ( is_admin() && current_user_can( 'edit_theme_options' ) ) {
 			$has_nav = get_posts(
 				array(
 					'post_type'      => 'wp_navigation',

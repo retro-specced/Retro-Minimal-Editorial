@@ -5,6 +5,10 @@
  * Categories: retro-minimal, pages
  * Description: Full projects showcase pattern with title, type filter bar, and 3-column project grid query loop.
  */
+
+declare( strict_types = 1 );
+
+defined( 'ABSPATH' ) || exit;
 ?>
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--60)">

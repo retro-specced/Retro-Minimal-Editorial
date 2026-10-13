@@ -5,6 +5,10 @@
  * Categories: retro-minimal
  * Description: Query Loop showing 3 project window-cards in a grid.
  */
+
+declare( strict_types = 1 );
+
+defined( 'ABSPATH' ) || exit;
 ?>
 <!-- wp:group {"align":"wide","className":"rme-showcase-section","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide rme-showcase-section" style="margin-bottom:var(--wp--preset--spacing--60)">

@@ -5,6 +5,10 @@
  * Categories: retro-minimal
  * Description: Monospace retro brutalist 404 error screen.
  */
+
+declare( strict_types = 1 );
+
+defined( 'ABSPATH' ) || exit;
 ?>
 <!-- wp:group {"className":"is-style-terminal","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"margin":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-style-terminal" style="margin-top:var(--wp--preset--spacing--50);margin-bottom:var(--wp--preset--spacing--50);padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50)">

@@ -5,6 +5,10 @@
  * Categories: retro-minimal
  * Description: Query Loop showing 6 latest blog posts as compact text rows.
  */
+
+declare( strict_types = 1 );
+
+defined( 'ABSPATH' ) || exit;
 ?>
 <!-- wp:group {"className":"rme-showcase-section","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group rme-showcase-section" style="margin-bottom:var(--wp--preset--spacing--60)">

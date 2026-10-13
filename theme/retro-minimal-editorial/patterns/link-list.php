@@ -5,6 +5,10 @@
  * Categories: retro-minimal
  * Description: Monospace retro link list for personal socials and portfolio links.
  */
+
+declare( strict_types = 1 );
+
+defined( 'ABSPATH' ) || exit;
 ?>
 <!-- wp:list {"className":"is-style-link-list"} -->
 <ul class="wp-block-list is-style-link-list">
