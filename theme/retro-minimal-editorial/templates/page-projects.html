@@ -2,7 +2,38 @@
 
 <!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
 <main class="wp-block-group" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--60)">
-	<!-- wp:pattern {"slug":"retro-minimal/projects-page"} /-->
+	<!-- Page Header -->
+	<!-- wp:heading {"level":1,"style":{"typography":{"fontFamily":"var:preset|font-family|serif","fontSize":"var:preset|font-size|xx-large"},"spacing":{"margin":{"bottom":"var:preset|spacing|20"}}}} -->
+	<h1 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--serif);font-size:var(--wp--preset--font-size--xx-large);margin-bottom:var(--wp--preset--spacing--20)">Projects &amp; Experiments</h1>
+	<!-- /wp:heading -->
+
+	<!-- wp:paragraph {"textColor":"muted","fontSize":"medium","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}}} -->
+	<p class="has-muted-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--30)">Vibe-coded utilities, editorial software, client builds, and open-source experiments.</p>
+	<!-- /wp:paragraph -->
+
+	<!-- Project Type Filter Bar -->
+	<!-- wp:retro-minimal/project-filter /-->
+
+	<!-- Projects Grid Query Loop -->
+	<!-- wp:query {"query":{"perPage":9,"pages":0,"offset":0,"postType":"project","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false}} -->
+	<div class="wp-block-query">
+		<!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
+			<!-- wp:template-part {"slug":"project-card","theme":"retro-minimal-editorial"} /-->
+		<!-- /wp:post-template -->
+
+		<!-- wp:query-no-results -->
+		<!-- wp:paragraph {"textColor":"muted","fontSize":"small","fontFamily":"mono","style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
+		<p class="has-muted-color has-text-color has-small-font-size has-mono-font-family" style="margin-top:var(--wp--preset--spacing--30)">// NO PROJECTS RECORDED YET</p>
+		<!-- /wp:paragraph -->
+		<!-- /wp:query-no-results -->
+
+		<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"space-between"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}}} -->
+			<!-- wp:query-pagination-previous {"label":"[ \u2190 PREV ]"} /-->
+			<!-- wp:query-pagination-numbers /-->
+			<!-- wp:query-pagination-next {"label":"[ NEXT \u2192 ]"} /-->
+		<!-- /wp:query-pagination -->
+	</div>
+	<!-- /wp:query -->
 </main>
 <!-- /wp:group -->
 

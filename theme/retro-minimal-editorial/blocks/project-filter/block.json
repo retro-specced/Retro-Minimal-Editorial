@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "retro-minimal/project-filter",
+	"title": "Project Filter",
+	"category": "theme",
+	"icon": "filter",
+	"description": "Monospace filter bar showing All link and project type chips.",
+	"keywords": [ "filter", "project", "types" ],
+	"textdomain": "retro-minimal-editorial",
+	"supports": {
+		"html": false,
+		"multiple": true,
+		"reusable": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"render": "file:./render.php"
+}

@@ -93,6 +93,8 @@ add_action(
 		register_block_type( get_theme_file_path( 'blocks/theme-toggle' ) );
 		register_block_type( get_theme_file_path( 'blocks/reading-time' ) );
 		register_block_type( get_theme_file_path( 'blocks/project-meta' ) );
+		register_block_type( get_theme_file_path( 'blocks/project-filter' ) );
+		register_block_type( get_theme_file_path( 'blocks/category-filter' ) );
 	}
 );
 

@@ -18,7 +18,7 @@
 	<!-- /wp:paragraph -->
 
 	<!-- Category Filter Bar -->
-	<!-- wp:pattern {"slug":"retro-minimal/category-filter"} /-->
+	<!-- wp:retro-minimal/category-filter /-->
 
 	<!-- Blog Query Loop -->
 	<!-- wp:query {"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false}} -->
