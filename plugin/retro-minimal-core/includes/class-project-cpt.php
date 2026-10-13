@@ -204,6 +204,22 @@ final class Project_CPT {
 				'default'           => true,
 				'sanitize_callback' => static fn( $v ): string => rest_sanitize_boolean( $v ) ? '1' : '0',
 			),
+			'rmc_project_models'      => array(
+				'type'              => 'string',
+				'description'       => __( 'AI models used for the project and their roles.', 'retro-minimal-core' ),
+				'single'            => true,
+				'show_in_rest'      => true,
+				'default'           => '',
+				'sanitize_callback' => 'sanitize_text_field',
+			),
+			'rmc_project_show_models' => array(
+				'type'              => 'boolean',
+				'description'       => __( 'Whether to display the Models line in project details.', 'retro-minimal-core' ),
+				'single'            => true,
+				'show_in_rest'      => true,
+				'default'           => false,
+				'sanitize_callback' => static fn( $v ): string => rest_sanitize_boolean( $v ) ? '1' : '0',
+			),
 		);
 
 		foreach ( $fields as $key => $args ) {

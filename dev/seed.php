@@ -193,6 +193,8 @@ $sample_projects = array(
 		'year'        => '2026',
 		'status'      => 'Active / Live',
 		'role'        => 'Design & Code',
+		'models'      => 'Claude 3.7 Sonnet (Architecture), Gemini 2.5 Pro (GLSL)',
+		'show_models' => true,
 		'live_url'    => 'https://example.com/demo/phosphor',
 		'show_live'   => true,
 		'source_url'  => 'https://github.com/gerald/phosphor-canvas',
@@ -207,6 +209,8 @@ $sample_projects = array(
 		'year'        => '2025',
 		'status'      => 'Active / Live',
 		'role'        => 'Full-Stack & Theme Author',
+		'models'      => '',
+		'show_models' => false,
 		'live_url'    => 'https://example.com/demo/monospace',
 		'show_live'   => true,
 		'source_url'  => 'https://github.com/gerald/monospace-editorial',
@@ -221,6 +225,8 @@ $sample_projects = array(
 		'year'        => '2025',
 		'status'      => 'Client Live',
 		'role'        => 'Data Architecture & Backend',
+		'models'      => '',
+		'show_models' => false,
 		'live_url'    => 'https://example.com/starlight',
 		'show_live'   => true,
 		'source_url'  => '',
@@ -235,6 +241,8 @@ $sample_projects = array(
 		'year'        => '2026',
 		'status'      => 'Open Source',
 		'role'        => 'Plugin Development',
+		'models'      => 'Claude Opus 3.5 & Gemini 2.5 Pro',
+		'show_models' => true,
 		'live_url'    => '',
 		'show_live'   => false,
 		'source_url'  => 'https://github.com/gerald/retro-minimal-core',
@@ -249,6 +257,8 @@ $sample_projects = array(
 		'year'        => '2024',
 		'status'      => 'Archived',
 		'role'        => 'Product Design & Frontend',
+		'models'      => '',
+		'show_models' => false,
 		'live_url'    => 'https://example.com/papercraft',
 		'show_live'   => true,
 		'source_url'  => 'https://github.com/gerald/papercraft-reader',
@@ -263,6 +273,8 @@ $sample_projects = array(
 		'year'        => '2024',
 		'status'      => 'Completed',
 		'role'        => 'Brand Identity & Web Dev',
+		'models'      => '',
+		'show_models' => false,
 		'live_url'    => 'https://example.com/logos',
 		'show_live'   => true,
 		'source_url'  => '',
@@ -301,6 +313,8 @@ foreach ( $sample_projects as $proj ) {
 		update_post_meta( $proj_id, 'rmc_project_year', $proj['year'] ?? '' );
 		update_post_meta( $proj_id, 'rmc_project_status', $proj['status'] ?? '' );
 		update_post_meta( $proj_id, 'rmc_project_role', $proj['role'] ?? '' );
+		update_post_meta( $proj_id, 'rmc_project_models', $proj['models'] ?? '' );
+		update_post_meta( $proj_id, 'rmc_project_show_models', (bool) ( $proj['show_models'] ?? false ) );
 		update_post_meta( $proj_id, 'rmc_project_live_url', $proj['live_url'] ?? '' );
 		update_post_meta( $proj_id, 'rmc_project_show_live', (bool) ( $proj['show_live'] ?? true ) );
 		update_post_meta( $proj_id, 'rmc_project_source_url', $proj['source_url'] ?? '' );

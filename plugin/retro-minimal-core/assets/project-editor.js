@@ -46,6 +46,7 @@
 
 		const showLive = meta.rmc_project_show_live !== false && meta.rmc_project_show_live !== '0' && meta.rmc_project_show_live !== 0;
 		const showSource = meta.rmc_project_show_source !== false && meta.rmc_project_show_source !== '0' && meta.rmc_project_show_source !== 0;
+		const showModels = Boolean( meta.rmc_project_show_models && meta.rmc_project_show_models !== '0' && meta.rmc_project_show_models !== 0 );
 
 		return el(
 			PluginDocumentSettingPanel,
@@ -73,6 +74,21 @@
 				help: __( 'Your role (e.g. Design & Code, Full-Stack).', 'retro-minimal-core' ),
 				value: meta.rmc_project_role || '',
 				onChange: ( val ) => updateMeta( 'rmc_project_role', val ),
+				__nextHasNoMarginBottom: true,
+			} ),
+			el( 'hr', { style: { margin: '14px 0', border: 'none', borderTop: '1px solid #ddd' } } ),
+			el( ToggleControl, {
+				label: __( 'Show Models', 'retro-minimal-core' ),
+				help: showModels ? __( 'Models will be displayed in project details.', 'retro-minimal-core' ) : __( 'Models field hidden.', 'retro-minimal-core' ),
+				checked: showModels,
+				onChange: ( val ) => updateMeta( 'rmc_project_show_models', val ),
+				__nextHasNoMarginBottom: true,
+			} ),
+			showModels && el( TextControl, {
+				label: __( 'Models', 'retro-minimal-core' ),
+				help: __( 'e.g. Claude 3.7 Sonnet (Architecture), Gemini 2.5 Pro (Code)', 'retro-minimal-core' ),
+				value: meta.rmc_project_models || '',
+				onChange: ( val ) => updateMeta( 'rmc_project_models', val ),
 				__nextHasNoMarginBottom: true,
 			} ),
 			el( 'hr', { style: { margin: '14px 0', border: 'none', borderTop: '1px solid #ddd' } } ),

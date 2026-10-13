@@ -26,9 +26,13 @@ $rme_show_live    = get_post_meta( $rme_post_id, 'rmc_project_show_live', true )
 $rme_source_url   = trim( (string) get_post_meta( $rme_post_id, 'rmc_project_source_url', true ) );
 $rme_show_source  = get_post_meta( $rme_post_id, 'rmc_project_show_source', true );
 
+$rme_models       = trim( (string) get_post_meta( $rme_post_id, 'rmc_project_models', true ) );
+$rme_show_models  = get_post_meta( $rme_post_id, 'rmc_project_show_models', true );
+
 $rme_has_live   = ( false !== $rme_show_live && '0' !== $rme_show_live && 0 !== $rme_show_live ) && '' !== $rme_live_url;
 $rme_has_source = ( false !== $rme_show_source && '0' !== $rme_show_source && 0 !== $rme_show_source ) && '' !== $rme_source_url;
-$rme_has_items  = '' !== $rme_year || '' !== $rme_status || '' !== $rme_role;
+$rme_has_models = ( false !== $rme_show_models && '0' !== $rme_show_models && 0 !== $rme_show_models && '' !== $rme_show_models ) && '' !== $rme_models;
+$rme_has_items  = '' !== $rme_year || '' !== $rme_status || '' !== $rme_role || $rme_has_models;
 
 // If no buttons and no details exist, render nothing.
 if ( ! $rme_has_live && ! $rme_has_source && ! $rme_has_items ) {
@@ -65,6 +69,9 @@ $rme_wrapper_attrs = get_block_wrapper_attributes(
 			<?php endif; ?>
 			<?php if ( '' !== $rme_role ) : ?>
 				<li><strong>Role</strong> .............................................. <?php echo esc_html( $rme_role ); ?></li>
+			<?php endif; ?>
+			<?php if ( $rme_has_models ) : ?>
+				<li><strong>Models</strong> ............................................ <?php echo esc_html( $rme_models ); ?></li>
 			<?php endif; ?>
 		</ul>
 	<?php endif; ?>

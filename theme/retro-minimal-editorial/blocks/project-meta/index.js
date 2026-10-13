@@ -29,6 +29,9 @@
 				? meta.rmc_project_role
 				: 'Design & Code';
 
+			const showModels = Boolean( meta.rmc_project_show_models && meta.rmc_project_show_models !== '0' && meta.rmc_project_show_models !== 0 );
+			const models = meta.rmc_project_models || '';
+
 			const showLive = meta.rmc_project_show_live !== false;
 			const liveUrl = meta.rmc_project_live_url || '';
 			const showSource = meta.rmc_project_show_source !== false;
@@ -69,7 +72,8 @@
 					{ className: 'wp-block-list is-style-link-list', style: { margin: 0 } },
 					el( 'li', null, el( 'strong', null, __( 'Year', 'retro-minimal-editorial' ) ), ' .............................................. ' + year ),
 					el( 'li', null, el( 'strong', null, __( 'Status', 'retro-minimal-editorial' ) ), ' ............................................ ' + status ),
-					el( 'li', null, el( 'strong', null, __( 'Role', 'retro-minimal-editorial' ) ), ' .............................................. ' + role )
+					el( 'li', null, el( 'strong', null, __( 'Role', 'retro-minimal-editorial' ) ), ' .............................................. ' + role ),
+					...( ( showModels && models ) ? [ el( 'li', null, el( 'strong', null, __( 'Models', 'retro-minimal-editorial' ) ), ' ............................................ ' + models ) ] : [] )
 				)
 			);
 		},
