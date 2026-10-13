@@ -1,5 +1,7 @@
 # Retro-Minimal Editorial
 
+![Retro-Minimal Editorial Theme Preview](theme/retro-minimal-editorial/screenshot.png)
+
 A reading-first WordPress block theme (Full Site Editing) paired with a companion content plugin, engineered in a restrained 90s editorial neo-brutalist aesthetic: warm cream paper, optical serif body text, monospace UI frames, 1px ink rules, and a phosphor CRT green accent.
 
 Designed for long-form reading, project showcases, and personal hubs. Built entirely with vanilla PHP, standard HTML templates, `theme.json`, and core Gutenberg blocks—zero build steps required.
@@ -12,6 +14,7 @@ Designed for long-form reading, project showcases, and personal hubs. Built enti
 retro-minimal-editorial/
 ├── theme/retro-minimal-editorial/      # WordPress Block Theme (FSE)
 │   ├── style.css                       # Theme declaration
+│   ├── screenshot.png                  # Theme preview screenshot (WordPress & GitHub)
 │   ├── theme.json                      # Design tokens, palette, typography, layout
 │   ├── functions.php                   # Theme bootstrap
 │   ├── styles/dark.json                # Dark style variation (editor preview)
