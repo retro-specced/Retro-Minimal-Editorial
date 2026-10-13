@@ -56,12 +56,12 @@
 					hasLive && el(
 						'div',
 						{ className: 'wp-block-button is-style-default' },
-						el( 'a', { className: 'wp-block-button__link', href: '#', onClick: ( e ) => e.preventDefault() }, 'Live Demo \u2197' )
+						el( 'a', { className: 'wp-block-button__link wp-element-button', href: '#', onClick: ( e ) => e.preventDefault() }, 'Live Demo \u2197' )
 					),
 					hasSource && el(
 						'div',
 						{ className: 'wp-block-button is-style-ghost' },
-						el( 'a', { className: 'wp-block-button__link', href: '#', onClick: ( e ) => e.preventDefault() }, 'Source Code \u2197' )
+						el( 'a', { className: 'wp-block-button__link wp-element-button', href: '#', onClick: ( e ) => e.preventDefault() }, 'Source Code \u2197' )
 					)
 				),
 				el(
