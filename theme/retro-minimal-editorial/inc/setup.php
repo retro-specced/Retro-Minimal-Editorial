@@ -25,9 +25,14 @@ add_action(
 add_action(
 	'wp_enqueue_scripts',
 	static function (): void {
-		$uri = get_theme_file_uri( 'assets/css/' );
-		wp_enqueue_style( 'rme-theme', $uri . 'theme.css', array(), RME_VERSION );
-		wp_enqueue_style( 'rme-color-scheme', $uri . 'color-scheme.css', array( 'rme-theme' ), RME_VERSION );
+		$css_path = get_theme_file_path( 'assets/css/theme.css' );
+		$version  = file_exists( $css_path ) ? (string) filemtime( $css_path ) : RME_VERSION;
+		$css_uri  = get_theme_file_uri( 'assets/css/' );
+		$js_uri   = get_theme_file_uri( 'assets/js/' );
+
+		wp_enqueue_style( 'rme-theme', $css_uri . 'theme.css', array(), $version );
+		wp_enqueue_style( 'rme-color-scheme', $css_uri . 'color-scheme.css', array( 'rme-theme' ), $version );
+		wp_enqueue_script( 'rme-theme', $js_uri . 'theme.js', array(), $version, true );
 	}
 );
 

@@ -602,3 +602,31 @@ a.rmc-chip {
 	}
 }
 
+/* Explicit styling when link is repositioned beneath query items by theme.js */
+.rme-showcase-link--mobile {
+	margin-top: var(--wp--preset--spacing--30, 1rem) !important;
+	margin-bottom: 0 !important;
+	display: block !important;
+	text-align: left !important;
+}
+
+.rme-showcase-link--mobile a {
+	display: inline-flex !important;
+	align-items: center !important;
+	padding: 0.35rem 0.75rem !important;
+	border: 1px solid var(--wp--preset--color--rule) !important;
+	background-color: var(--wp--preset--color--paper) !important;
+	color: var(--wp--preset--color--ink) !important;
+	text-decoration: none !important;
+	font-family: var(--wp--preset--font-family--mono) !important;
+	font-size: var(--wp--preset--font-size--x-small) !important;
+	font-weight: 600 !important;
+	letter-spacing: 0.04em !important;
+	text-transform: uppercase !important;
+}
+
+.rme-showcase-link--mobile a:hover {
+	background-color: var(--wp--preset--color--ink) !important;
+	color: var(--wp--preset--color--paper) !important;
+}
+
