@@ -83,6 +83,13 @@
 	<h2 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--mono);font-size:var(--wp--preset--font-size--small);letter-spacing:0.04em;text-transform:uppercase;margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--20)">// Inquiries &amp; Transmission</h2>
 	<!-- /wp:heading -->
 
-	<!-- wp:pattern {"slug":"retro-minimal/link-list"} /-->
+	<!-- wp:list {"className":"is-style-link-list"} -->
+	<ul class="wp-block-list is-style-link-list">
+		<li>&rarr; GitHub ...................................... <a href="https://github.com/gerald" target="_blank" rel="noopener">github.com/gerald</a></li>
+		<li>&rarr; X / Twitter ................................. <a href="https://x.com/gerald" target="_blank" rel="noopener">@gerald</a></li>
+		<li>&rarr; Bluesky ..................................... <a href="https://bsky.app" target="_blank" rel="noopener">@gerald.bsky.social</a></li>
+		<li>&rarr; Email ....................................... <a href="mailto:hello@gerald.dev">hello@gerald.dev</a></li>
+	</ul>
+	<!-- /wp:list -->
 </div>
 <!-- /wp:group -->

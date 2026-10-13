@@ -80,17 +80,17 @@ foreach ( $stacks as $s ) {
 $pages = array(
 	'home' => array(
 		'title'    => 'Home',
-		'content'  => '',
+		'content'  => '<!-- wp:pattern {"slug":"retro-minimal/home-page"} /-->',
 		'template' => 'page-home',
 	),
 	'blog' => array(
 		'title'    => 'Writing',
-		'content'  => '',
+		'content'  => '<!-- wp:pattern {"slug":"retro-minimal/blog-page"} /-->',
 		'template' => 'page-blog',
 	),
 	'projects' => array(
 		'title'    => 'Projects',
-		'content'  => '',
+		'content'  => '<!-- wp:pattern {"slug":"retro-minimal/projects-page"} /-->',
 		'template' => 'page-projects',
 	),
 	'portfolio' => array(
@@ -100,7 +100,7 @@ $pages = array(
 	),
 	'about' => array(
 		'title'    => 'About',
-		'content'  => '',
+		'content'  => '<!-- wp:pattern {"slug":"retro-minimal/about-page"} /-->',
 		'template' => 'page-about',
 	),
 );
