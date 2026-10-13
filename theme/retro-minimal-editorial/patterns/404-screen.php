@@ -12,12 +12,12 @@
 	<h1 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--mono);font-size:var(--wp--preset--font-size--large);letter-spacing:0.04em">ERROR 404 &mdash; FILE NOT FOUND</h1>
 	<!-- /wp:heading -->
 
-	<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"var:preset|font-size|small"},"color":{"text":"var:preset|color|muted"}}} -->
-	<p class="has-muted-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:var(--wp--preset--font-size--small)">The requested URL could not be located in the file directory. The target document may have moved or been decommissioned.</p>
+	<!-- wp:paragraph {"textColor":"muted","fontSize":"small","fontFamily":"mono"} -->
+	<p class="has-muted-color has-text-color has-small-font-size has-mono-font-family">The requested URL could not be located in the file directory. The target document may have moved or been decommissioned.</p>
 	<!-- /wp:paragraph -->
 
-	<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"var:preset|font-size|x-small"}}} -->
-	<p style="font-family:var(--wp--preset--font-family--mono);font-size:var(--wp--preset--font-size--x-small)"><code>&gt; RETURN TO SAFE DIRECTORY:</code></p>
+	<!-- wp:paragraph {"fontSize":"x-small","fontFamily":"mono"} -->
+	<p class="has-x-small-font-size has-mono-font-family"><code>&gt; RETURN TO SAFE DIRECTORY:</code></p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:list {"className":"is-style-link-list"} -->

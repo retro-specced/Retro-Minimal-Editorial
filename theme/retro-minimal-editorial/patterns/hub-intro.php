@@ -12,8 +12,8 @@
 	<h1 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--serif);font-size:var(--wp--preset--font-size--xx-large);line-height:1.05">Gerald</h1>
 	<!-- /wp:heading -->
 
-	<!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|medium","lineHeight":"1.4"},"color":{"text":"var:preset|color|muted"}}} -->
-	<p class="has-muted-color has-text-color" style="font-size:var(--wp--preset--font-size--medium);line-height:1.4">Software engineer &amp; designer building thoughtful tools, editorial interfaces, and small-web experiments.</p>
+	<!-- wp:paragraph {"textColor":"muted","fontSize":"medium","style":{"typography":{"lineHeight":"1.4"}}} -->
+	<p class="has-muted-color has-text-color has-medium-font-size" style="line-height:1.4">Software engineer &amp; designer building thoughtful tools, editorial interfaces, and small-web experiments.</p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:list {"className":"is-style-link-list"} -->

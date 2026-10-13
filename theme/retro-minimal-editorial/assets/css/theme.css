@@ -252,13 +252,23 @@ a.rmc-chip {
 	align-items: baseline;
 	flex-wrap: nowrap;
 	gap: 0.75rem;
+	position: relative;
 }
 
+.rme-post-row__main::after,
 .rme-dot-leader {
+	content: "";
 	flex-grow: 1;
 	border-bottom: 1px dotted var(--wp--preset--color--muted);
 	margin-bottom: 0.35rem;
 	min-width: 2rem;
+	order: 3;
+}
+
+.rme-post-row__main .wp-block-retro-minimal-reading-time,
+.rme-post-row__main .rme-reading-time {
+	order: 4;
+	margin-left: auto;
 }
 
 @media (max-width: 640px) {
@@ -266,6 +276,7 @@ a.rmc-chip {
 		flex-wrap: wrap;
 		gap: 0.4rem;
 	}
+	.rme-post-row__main::after,
 	.rme-dot-leader {
 		display: none;
 	}

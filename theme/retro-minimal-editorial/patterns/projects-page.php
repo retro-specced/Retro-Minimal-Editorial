@@ -13,8 +13,8 @@
 	<h1 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--serif);font-size:var(--wp--preset--font-size--xx-large);margin-bottom:var(--wp--preset--spacing--20)">Projects &amp; Experiments</h1>
 	<!-- /wp:heading -->
 
-	<!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|medium"},"color":{"text":"var:preset|color|muted"},"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}}} -->
-	<p class="has-muted-color has-text-color" style="font-size:var(--wp--preset--font-size--medium);margin-bottom:var(--wp--preset--spacing--30)">Vibe-coded utilities, editorial software, client builds, and open-source experiments.</p>
+	<!-- wp:paragraph {"textColor":"muted","fontSize":"medium","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}}} -->
+	<p class="has-muted-color has-text-color has-medium-font-size" style="margin-bottom:var(--wp--preset--spacing--30)">Vibe-coded utilities, editorial software, client builds, and open-source experiments.</p>
 	<!-- /wp:paragraph -->
 
 	<!-- Project Type Filter Bar -->
@@ -28,8 +28,8 @@
 		<!-- /wp:post-template -->
 
 		<!-- wp:query-no-results -->
-		<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"var:preset|font-size|small"},"color":{"text":"var:preset|color|muted"},"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
-		<p class="has-muted-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:var(--wp--preset--font-size--small);margin-top:var(--wp--preset--spacing--30)">// NO PROJECTS RECORDED YET</p>
+		<!-- wp:paragraph {"textColor":"muted","fontSize":"small","fontFamily":"mono","style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
+		<p class="has-muted-color has-text-color has-small-font-size has-mono-font-family" style="margin-top:var(--wp--preset--spacing--30)">// NO PROJECTS RECORDED YET</p>
 		<!-- /wp:paragraph -->
 		<!-- /wp:query-no-results -->
 

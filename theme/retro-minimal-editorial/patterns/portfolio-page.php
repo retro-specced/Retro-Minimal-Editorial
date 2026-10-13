@@ -13,8 +13,8 @@
 	<h1 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--serif);font-size:var(--wp--preset--font-size--xx-large)">Selected Work &amp; Portfolio</h1>
 	<!-- /wp:heading -->
 
-	<!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|medium"},"color":{"text":"var:preset|color|muted"}}} -->
-	<p class="has-muted-color has-text-color" style="font-size:var(--wp--preset--font-size--medium)">A curated archive of production work, editorial websites, and client software engineering.</p>
+	<!-- wp:paragraph {"textColor":"muted","fontSize":"medium"} -->
+	<p class="has-muted-color has-text-color has-medium-font-size">A curated archive of production work, editorial websites, and client software engineering.</p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:separator {"className":"is-style-dashed"} -->

@@ -16,23 +16,23 @@
 	<!-- Terminal Status & Dossier -->
 	<!-- wp:group {"className":"is-style-terminal","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"},"margin":{"bottom":"var:preset|spacing|40"}}}} -->
 	<div class="wp-block-group is-style-terminal" style="margin-bottom:var(--wp--preset--spacing--40);padding:var(--wp--preset--spacing--30)">
-		<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"var:preset|font-size|x-small","lineHeight":"1.7"}}} -->
-		<p style="font-family:var(--wp--preset--font-family--mono);font-size:var(--wp--preset--font-size--x-small);line-height:1.7"><strong>// DOSSIER &amp; STATUS</strong><br>AUTHOR: Gerald<br>ROLE: Software Engineer &amp; Editorial Systems Designer<br>STATUS: Available for select contracts &amp; experiments<br>STACK: TypeScript · WordPress FSE · React · Frontier AI Models<br>LOCATION: UTC+8 · Remote</p>
+		<!-- wp:paragraph {"fontFamily":"mono","fontSize":"x-small","style":{"typography":{"lineHeight":"1.7"}}} -->
+		<p class="has-mono-font-family has-x-small-font-size" style="line-height:1.7"><strong>// DOSSIER &amp; STATUS</strong><br>AUTHOR: Gerald<br>ROLE: Software Engineer &amp; Editorial Systems Designer<br>STATUS: Available for select contracts &amp; experiments<br>STACK: TypeScript · WordPress FSE · React · Frontier AI Models<br>LOCATION: UTC+8 · Remote</p>
 		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:group -->
 
 	<!-- Narrative Bio & Philosophy -->
-	<!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|medium","lineHeight":"1.5"},"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}}} -->
-	<p style="font-size:var(--wp--preset--font-size--medium);line-height:1.5">I am a software engineer and designer crafting deliberate digital tools, editorial publishing systems, and tactile web interfaces.</p>
+	<!-- wp:paragraph {"fontSize":"medium","style":{"typography":{"lineHeight":"1.5"},"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}}} -->
+	<p class="has-medium-font-size" style="line-height:1.5;margin-bottom:var(--wp--preset--spacing--30)">I am a software engineer and designer crafting deliberate digital tools, editorial publishing systems, and tactile web interfaces.</p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:paragraph {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}}} -->
-	<p>I believe digital spaces should feel tactile, fast, and respectful of human attention. In an era dominated by bloated JavaScript bundles and noisy feeds, I lean into neo-brutalism and classic editorial typography: crisp 1px borders, honest ink-on-paper contrast, generous reading rhythm, and instantaneous load times.</p>
+	<p style="margin-bottom:var(--wp--preset--spacing--30)">I believe digital spaces should feel tactile, fast, and respectful of human attention. In an era dominated by bloated JavaScript bundles and noisy feeds, I lean into neo-brutalism and classic editorial typography: crisp 1px borders, honest ink-on-paper contrast, generous reading rhythm, and instantaneous load times.</p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:paragraph {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|40"}}}} -->
-	<p>My work combines classical software craftsmanship with frontier AI velocity. Rather than using AI as an indiscriminate code generator, I treat frontier models as tireless apprentices—enabling rapid vibe-coding, high-fidelity prototyping, and uncompromising typographic systems.</p>
+	<p style="margin-bottom:var(--wp--preset--spacing--40)">My work combines classical software craftsmanship with frontier AI velocity. Rather than using AI as an indiscriminate code generator, I treat frontier models as tireless apprentices—enabling rapid vibe-coding, high-fidelity prototyping, and uncompromising typographic systems.</p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:separator {"className":"is-style-asterisks"} -->
@@ -72,8 +72,8 @@
 		<!-- wp:heading {"level":3,"style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"var:preset|font-size|x-small","textTransform":"uppercase","letterSpacing":"0.04em"},"spacing":{"margin":{"bottom":"var:preset|spacing|10"}}}} -->
 		<h3 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--mono);font-size:var(--wp--preset--font-size--x-small);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:var(--wp--preset--spacing--10)">// Colophon &amp; Specs</h3>
 		<!-- /wp:heading -->
-		<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"var:preset|font-size|x-small","lineHeight":"1.6"},"color":{"text":"var:preset|color|muted"}}} -->
-		<p class="has-muted-color has-text-color" style="font-family:var(--wp--preset--font-family--mono);font-size:var(--wp--preset--font-size--x-small);line-height:1.6">Typeset in Newsreader (editorial serif) and JetBrains Mono (monospace metadata). Crafted with WordPress Full Site Editing, custom block tokens, and vanilla CSS. Zero client runtime frameworks, zero trackers, and built for 10+ minute focused reading.</p>
+		<!-- wp:paragraph {"textColor":"muted","fontSize":"x-small","fontFamily":"mono","style":{"typography":{"lineHeight":"1.6"}}} -->
+		<p class="has-muted-color has-text-color has-x-small-font-size has-mono-font-family" style="line-height:1.6">Typeset in Newsreader (editorial serif) and JetBrains Mono (monospace metadata). Crafted with WordPress Full Site Editing, custom block tokens, and vanilla CSS. Zero client runtime frameworks, zero trackers, and built for 10+ minute focused reading.</p>
 		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:group -->

@@ -14,8 +14,8 @@
 		<h2 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--mono);font-size:var(--wp--preset--font-size--small);letter-spacing:0.04em;text-transform:uppercase">// Featured Projects</h2>
 		<!-- /wp:heading -->
 
-		<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"var:preset|font-size|x-small"}}} -->
-		<p style="font-family:var(--wp--preset--font-family--mono);font-size:var(--wp--preset--font-size--x-small)"><a href="/projects/">All projects &rarr;</a></p>
+		<!-- wp:paragraph {"fontSize":"x-small","fontFamily":"mono"} -->
+		<p class="has-x-small-font-size has-mono-font-family"><a href="/projects/">All projects &rarr;</a></p>
 		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:group -->
