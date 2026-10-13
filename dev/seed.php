@@ -210,7 +210,7 @@ $sample_projects = array(
 		'show_models' => true,
 		'live_url'    => 'https://example.com/demo/phosphor',
 		'show_live'   => true,
-		'source_url'  => 'https://github.com/gerald/phosphor-canvas',
+		'source_url'  => 'https://github.com/retro-specced/phosphor-canvas',
 		'show_source' => true,
 	),
 	array(
@@ -226,7 +226,7 @@ $sample_projects = array(
 		'show_models' => false,
 		'live_url'    => 'https://example.com/demo/monospace',
 		'show_live'   => true,
-		'source_url'  => 'https://github.com/gerald/monospace-editorial',
+		'source_url'  => 'https://github.com/retro-specced/monospace-editorial',
 		'show_source' => true,
 	),
 	array(
@@ -258,7 +258,7 @@ $sample_projects = array(
 		'show_models' => true,
 		'live_url'    => '',
 		'show_live'   => false,
-		'source_url'  => 'https://github.com/gerald/retro-minimal-core',
+		'source_url'  => 'https://github.com/retro-specced/retro-minimal-core',
 		'show_source' => true,
 	),
 	array(
@@ -274,7 +274,7 @@ $sample_projects = array(
 		'show_models' => false,
 		'live_url'    => 'https://example.com/papercraft',
 		'show_live'   => true,
-		'source_url'  => 'https://github.com/gerald/papercraft-reader',
+		'source_url'  => 'https://github.com/retro-specced/papercraft-reader',
 		'show_source' => true,
 	),
 	array(

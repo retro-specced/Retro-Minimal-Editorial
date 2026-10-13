@@ -1,12 +1,12 @@
 <?php
 /**
  * Plugin Name:       Retro-Minimal Core
- * Plugin URI:        https://github.com/gerald/retro-minimal-editorial
+ * Plugin URI:        https://github.com/retro-specced/Retro-Minimal-Editorial
  * Description:       Content layer for the Retro-Minimal Editorial theme: the Project post type (with Type and Stack taxonomies) and per-category label colors. Keeps your content portable if you ever switch themes.
  * Version:           1.0.0
  * Requires at least: 7.0
  * Requires PHP:      8.2
- * Author:            Gerald
+ * Author:            retro-specced
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       retro-minimal-core

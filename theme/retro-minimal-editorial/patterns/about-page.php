@@ -14,14 +14,14 @@ defined( 'ABSPATH' ) || exit;
 <div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--60)">
 	<!-- Page Title -->
 	<!-- wp:heading {"level":1,"style":{"typography":{"fontFamily":"var:preset|font-family|serif","fontSize":"var:preset|font-size|xx-large"},"spacing":{"margin":{"bottom":"var:preset|spacing|20"}}}} -->
-	<h1 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--serif);font-size:var(--wp--preset--font-size--xx-large);margin-bottom:var(--wp--preset--spacing--20)">About Gerald</h1>
+	<h1 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--serif);font-size:var(--wp--preset--font-size--xx-large);margin-bottom:var(--wp--preset--spacing--20)">About You</h1>
 	<!-- /wp:heading -->
 
 	<!-- Terminal Status & Dossier -->
 	<!-- wp:group {"className":"is-style-terminal","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"},"margin":{"bottom":"var:preset|spacing|40"}}}} -->
 	<div class="wp-block-group is-style-terminal" style="margin-bottom:var(--wp--preset--spacing--40);padding:var(--wp--preset--spacing--30)">
 		<!-- wp:paragraph {"fontFamily":"mono","fontSize":"x-small","style":{"typography":{"lineHeight":"1.7"}}} -->
-		<p class="has-mono-font-family has-x-small-font-size" style="line-height:1.7"><strong>// DOSSIER &amp; STATUS</strong><br>AUTHOR: Gerald<br>ROLE: Software Engineer &amp; Editorial Systems Designer<br>STATUS: Available for select contracts &amp; experiments<br>STACK: TypeScript · WordPress FSE · React · Frontier AI Models<br>LOCATION: UTC+8 · Remote</p>
+		<p class="has-mono-font-family has-x-small-font-size" style="line-height:1.7"><strong>// DOSSIER &amp; STATUS</strong><br>AUTHOR: You<br>ROLE: Software Engineer &amp; Editorial Systems Designer<br>STATUS: Available for select contracts &amp; experiments<br>STACK: TypeScript · WordPress FSE · React · Frontier AI Models<br>LOCATION: UTC+8 · Remote</p>
 		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:group -->
@@ -89,10 +89,10 @@ defined( 'ABSPATH' ) || exit;
 
 	<!-- wp:list {"className":"is-style-link-list"} -->
 	<ul class="wp-block-list is-style-link-list">
-		<li><span class="rme-link-label">&rarr; GitHub</span><span class="rme-link-leader" aria-hidden="true"></span><a href="https://github.com/gerald" target="_blank" rel="noopener">github.com/gerald</a></li>
-		<li><span class="rme-link-label">&rarr; X / Twitter</span><span class="rme-link-leader" aria-hidden="true"></span><a href="https://x.com/gerald" target="_blank" rel="noopener">@gerald</a></li>
-		<li><span class="rme-link-label">&rarr; Bluesky</span><span class="rme-link-leader" aria-hidden="true"></span><a href="https://bsky.app" target="_blank" rel="noopener">@gerald.bsky.social</a></li>
-		<li><span class="rme-link-label">&rarr; Email</span><span class="rme-link-leader" aria-hidden="true"></span><a href="mailto:hello@gerald.dev">hello@gerald.dev</a></li>
+		<li><span class="rme-link-label">&rarr; GitHub</span><span class="rme-link-leader" aria-hidden="true"></span><a href="https://github.com/you" target="_blank" rel="noopener">github.com/you</a></li>
+		<li><span class="rme-link-label">&rarr; X / Twitter</span><span class="rme-link-leader" aria-hidden="true"></span><a href="https://x.com/you" target="_blank" rel="noopener">@you</a></li>
+		<li><span class="rme-link-label">&rarr; Bluesky</span><span class="rme-link-leader" aria-hidden="true"></span><a href="https://bsky.app" target="_blank" rel="noopener">@you.bsky.social</a></li>
+		<li><span class="rme-link-label">&rarr; Email</span><span class="rme-link-leader" aria-hidden="true"></span><a href="mailto:hello@you.dev">hello@you.dev</a></li>
 	</ul>
 	<!-- /wp:list -->
 </div>
