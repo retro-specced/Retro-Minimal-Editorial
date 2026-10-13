@@ -530,3 +530,75 @@ a.rmc-chip {
 		animation: none !important;
 	}
 }
+
+/* ------------------------------------------------------------------ */
+/* 13. Showcase Sections (.rme-showcase-section)                      */
+/* ------------------------------------------------------------------ */
+
+.rme-showcase-section {
+	position: relative;
+}
+
+.rme-showcase-section .rme-showcase-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	margin-bottom: var(--wp--preset--spacing--20, 0.5rem);
+}
+
+.rme-showcase-section .rme-showcase-link a {
+	display: inline-flex;
+	align-items: center;
+	font-family: var(--wp--preset--font-family--mono);
+	font-size: var(--wp--preset--font-size--x-small);
+	letter-spacing: 0.02em;
+	text-decoration: underline;
+	color: var(--wp--preset--color--ink);
+	transition: color 0.15s ease;
+}
+
+.rme-showcase-section .rme-showcase-link a:hover {
+	color: var(--wp--preset--color--accent);
+}
+
+/* Mobile: place "View all posts →" / "All projects →" beneath the query items */
+@media (max-width: 640px) {
+	.rme-showcase-section {
+		display: flex !important;
+		flex-direction: column !important;
+	}
+
+	.rme-showcase-section .rme-showcase-header {
+		display: contents !important;
+	}
+
+	.rme-showcase-section .rme-showcase-header > .wp-block-heading {
+		order: 1 !important;
+		margin-bottom: var(--wp--preset--spacing--20, 0.5rem) !important;
+	}
+
+	.rme-showcase-section > .wp-block-query {
+		order: 2 !important;
+	}
+
+	.rme-showcase-section .rme-showcase-header > .rme-showcase-link {
+		order: 3 !important;
+		margin-top: var(--wp--preset--spacing--30, 1rem) !important;
+		margin-bottom: 0 !important;
+		text-align: left !important;
+	}
+
+	.rme-showcase-section .rme-showcase-header > .rme-showcase-link a {
+		padding: 0.35rem 0.75rem;
+		border: 1px solid var(--wp--preset--color--rule);
+		background-color: var(--wp--preset--color--paper);
+		text-decoration: none;
+		font-weight: 600;
+	}
+
+	.rme-showcase-section .rme-showcase-header > .rme-showcase-link a:hover {
+		background-color: var(--wp--preset--color--ink);
+		color: var(--wp--preset--color--paper);
+	}
+}
+
