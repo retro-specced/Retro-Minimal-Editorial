@@ -379,6 +379,10 @@
 		{ "name": "project-card", "title": "Project Card", "area": "uncategorized" }
 	],
 	"customTemplates": [
+		{ "name": "page-home", "title": "Home (Personal Hub)", "postTypes": [ "page" ] },
+		{ "name": "page-about", "title": "About Page", "postTypes": [ "page" ] },
+		{ "name": "page-projects", "title": "Projects Showcase", "postTypes": [ "page" ] },
+		{ "name": "page-blog", "title": "Blog Archive", "postTypes": [ "page" ] },
 		{ "name": "page-wide", "title": "Page (wide, no title)", "postTypes": [ "page" ] }
 	]
 }

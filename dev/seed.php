@@ -79,20 +79,29 @@ foreach ( $stacks as $s ) {
 // 4. Create Pages & Configure Reading Settings
 $pages = array(
 	'home' => array(
-		'title'   => 'Home',
-		'content' => '<!-- wp:pattern {"slug":"retro-minimal/hub-intro"} /-->',
+		'title'    => 'Home',
+		'content'  => '',
+		'template' => 'page-home',
 	),
 	'blog' => array(
-		'title'   => 'Writing',
-		'content' => '',
+		'title'    => 'Writing',
+		'content'  => '',
+		'template' => 'page-blog',
+	),
+	'projects' => array(
+		'title'    => 'Projects',
+		'content'  => '',
+		'template' => 'page-projects',
 	),
 	'portfolio' => array(
-		'title'   => 'Portfolio',
-		'content' => '<!-- wp:pattern {"slug":"retro-minimal/portfolio-page"} /-->',
+		'title'    => 'Portfolio',
+		'content'  => '<!-- wp:pattern {"slug":"retro-minimal/portfolio-page"} /-->',
+		'template' => '',
 	),
 	'about' => array(
-		'title'   => 'About',
-		'content' => '<!-- wp:paragraph --><p>Welcome to my editorial retro hub. Built with WordPress Full Site Editing and designed for 10+ minute uninterrupted reading.</p><!-- /wp:paragraph -->',
+		'title'    => 'About',
+		'content'  => '',
+		'template' => 'page-about',
 	),
 );
 
@@ -111,6 +120,10 @@ foreach ( $pages as $slug => $data ) {
 		echo "  -> Page: {$data['title']}\n";
 	} else {
 		$page_ids[ $slug ] = $existing->ID;
+	}
+
+	if ( ! empty( $data['template'] ) && ! empty( $page_ids[ $slug ] ) ) {
+		update_post_meta( $page_ids[ $slug ], '_wp_page_template', $data['template'] );
 	}
 }
 
@@ -349,6 +362,17 @@ if ( ! $menu_exists ) {
 				'menu-item-title'     => 'Blog',
 				'menu-item-object'    => 'page',
 				'menu-item-object-id' => $page_ids['blog'],
+				'menu-item-type'      => 'post_type',
+				'menu-item-status'    => 'publish',
+				'menu-item-position'  => $order++,
+			) );
+		}
+
+		if ( ! empty( $page_ids['projects'] ) ) {
+			wp_update_nav_menu_item( $menu_id, 0, array(
+				'menu-item-title'     => 'Projects',
+				'menu-item-object'    => 'page',
+				'menu-item-object-id' => $page_ids['projects'],
 				'menu-item-type'      => 'post_type',
 				'menu-item-status'    => 'publish',
 				'menu-item-position'  => $order++,

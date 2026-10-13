@@ -9,7 +9,29 @@
 $rme_types = taxonomy_exists( 'project_type' ) ? get_terms( array( 'taxonomy' => 'project_type', 'hide_empty' => false ) ) : array();
 $rme_current_term = is_tax( 'project_type' ) ? get_queried_object_id() : 0;
 $rme_is_all = ! is_tax( 'project_type' );
-$rme_archive_url = get_post_type_archive_link( 'project' ) ?: home_url( '/projects/' );
+
+$rme_archive_url = '';
+if ( is_page_template( 'page-projects' ) || ( is_page() && 'projects' === get_post()->post_name ) ) {
+	$rme_archive_url = get_permalink();
+} else {
+	$rme_projects_pages = get_posts(
+		array(
+			'post_type'   => 'page',
+			'meta_key'    => '_wp_page_template',
+			'meta_value'  => 'page-projects',
+			'numberposts' => 1,
+		)
+	);
+	if ( ! empty( $rme_projects_pages ) ) {
+		$rme_archive_url = get_permalink( $rme_projects_pages[0]->ID );
+	} else {
+		$rme_archive_url = get_post_type_archive_link( 'project' );
+		if ( ! $rme_archive_url ) {
+			$page_by_path = get_page_by_path( 'projects' );
+			$rme_archive_url = $page_by_path ? get_permalink( $page_by_path ) : home_url( '/projects/' );
+		}
+	}
+}
 ?>
 <nav class="rme-filter-row" aria-label="<?php esc_attr_e( 'Project type filter', 'retro-minimal-editorial' ); ?>">
 	<span style="font-weight:700;margin-right:0.25rem;">// FILTER:</span>
