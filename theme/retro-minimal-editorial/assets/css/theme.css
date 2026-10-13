@@ -385,10 +385,16 @@ a.rmc-chip {
 
 .wp-block-list.is-style-link-list .rme-link-leader {
 	flex-grow: 1;
+	height: 2px;
+	margin-left: 0.35rem;
+	margin-right: 0.65rem;
+	margin-bottom: 4px;
+	background-image: radial-gradient(circle, var(--wp--preset--color--muted) 1px, transparent 1.05px);
+	background-size: 7px 2px;
+	background-repeat: repeat-x;
+	background-position: left center;
+	color: transparent !important;
 	overflow: hidden;
-	white-space: nowrap;
-	color: var(--wp--preset--color--muted);
-	padding: 0 0.35rem;
 	user-select: none;
 	letter-spacing: normal;
 	min-width: 0.5rem;
@@ -400,6 +406,7 @@ a.rmc-chip {
 	white-space: nowrap;
 	text-align: right;
 	margin-left: auto;
+	color: var(--wp--preset--color--ink);
 }
 
 /* Buttons */
