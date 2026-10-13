@@ -467,7 +467,18 @@ a.rmc-chip {
 }
 
 /* ------------------------------------------------------------------ */
-/* 11. Reduced Motion Accessibility                                   */
+/* 11. Project Meta Block (.rme-project-meta)                         */
+/* ------------------------------------------------------------------ */
+
+.rme-project-meta .wp-block-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--wp--preset--spacing--20, 0.75rem);
+}
+
+/* ------------------------------------------------------------------ */
+/* 12. Reduced Motion Accessibility                                   */
 /* ------------------------------------------------------------------ */
 
 @media (prefers-reduced-motion: reduce) {

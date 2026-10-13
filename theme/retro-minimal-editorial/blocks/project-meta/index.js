@@ -43,7 +43,16 @@
 				blockProps,
 				( hasLive || hasSource ) && el(
 					'div',
-					{ className: 'wp-block-buttons', style: { marginBottom: 'var(--wp--preset--spacing--30)' } },
+					{
+						className: 'wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex',
+						style: {
+							display: 'flex',
+							flexWrap: 'wrap',
+							alignItems: 'center',
+							gap: 'var(--wp--preset--spacing--20, 0.75rem)',
+							marginBottom: 'var(--wp--preset--spacing--30)',
+						},
+					},
 					hasLive && el(
 						'div',
 						{ className: 'wp-block-button is-style-default' },

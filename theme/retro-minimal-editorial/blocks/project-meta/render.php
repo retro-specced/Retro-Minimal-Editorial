@@ -41,7 +41,7 @@ $rme_wrapper_attrs = get_block_wrapper_attributes(
 ?>
 <div <?php echo $rme_wrapper_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 	<?php if ( $rme_has_live || $rme_has_source ) : ?>
-		<div class="wp-block-buttons" style="margin-bottom:<?php echo $rme_has_items ? 'var(--wp--preset--spacing--30)' : '0'; ?>;">
+		<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex" style="display:flex;flex-wrap:wrap;align-items:center;gap:var(--wp--preset--spacing--20,0.75rem);margin-bottom:<?php echo $rme_has_items ? 'var(--wp--preset--spacing--30)' : '0'; ?>;">
 			<?php if ( $rme_has_live ) : ?>
 				<div class="wp-block-button is-style-default">
 					<a class="wp-block-button__link" href="<?php echo esc_url( $rme_live_url ); ?>" target="_blank" rel="noopener">Live Demo &#8599;</a>
