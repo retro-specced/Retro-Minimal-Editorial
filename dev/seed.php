@@ -322,4 +322,75 @@ foreach ( $sample_projects as $proj ) {
 	}
 }
 
+// 7. Seed Navigation Menu (Home, Blog, Portfolio, About)
+$menu_name   = 'Primary Navigation';
+$menu_exists = wp_get_nav_menu_object( $menu_name );
+$menu_id     = $menu_exists ? (int) $menu_exists->term_id : 0;
+
+if ( ! $menu_exists ) {
+	$new_menu_id = wp_create_nav_menu( $menu_name );
+	if ( ! is_wp_error( $new_menu_id ) ) {
+		$menu_id = (int) $new_menu_id;
+		$order   = 1;
+
+		if ( ! empty( $page_ids['home'] ) ) {
+			wp_update_nav_menu_item( $menu_id, 0, array(
+				'menu-item-title'     => 'Home',
+				'menu-item-object'    => 'page',
+				'menu-item-object-id' => $page_ids['home'],
+				'menu-item-type'      => 'post_type',
+				'menu-item-status'    => 'publish',
+				'menu-item-position'  => $order++,
+			) );
+		}
+
+		if ( ! empty( $page_ids['blog'] ) ) {
+			wp_update_nav_menu_item( $menu_id, 0, array(
+				'menu-item-title'     => 'Blog',
+				'menu-item-object'    => 'page',
+				'menu-item-object-id' => $page_ids['blog'],
+				'menu-item-type'      => 'post_type',
+				'menu-item-status'    => 'publish',
+				'menu-item-position'  => $order++,
+			) );
+		}
+
+		if ( ! empty( $page_ids['portfolio'] ) ) {
+			wp_update_nav_menu_item( $menu_id, 0, array(
+				'menu-item-title'     => 'Portfolio',
+				'menu-item-object'    => 'page',
+				'menu-item-object-id' => $page_ids['portfolio'],
+				'menu-item-type'      => 'post_type',
+				'menu-item-status'    => 'publish',
+				'menu-item-position'  => $order++,
+			) );
+		}
+
+		if ( ! empty( $page_ids['about'] ) ) {
+			wp_update_nav_menu_item( $menu_id, 0, array(
+				'menu-item-title'     => 'About',
+				'menu-item-object'    => 'page',
+				'menu-item-object-id' => $page_ids['about'],
+				'menu-item-type'      => 'post_type',
+				'menu-item-status'    => 'publish',
+				'menu-item-position'  => $order++,
+			) );
+		}
+
+		echo "  -> Menu: Primary Navigation created (Home, Blog, Portfolio, About)\n";
+	}
+}
+
+if ( $menu_id ) {
+	$locations            = get_theme_mod( 'nav_menu_locations', array() );
+	$locations['primary'] = $menu_id;
+	set_theme_mod( 'nav_menu_locations', $locations );
+	echo "  -> Assigned 'Primary Navigation' to primary theme location\n";
+
+	if ( function_exists( 'RetroMinimalEditorial\\sync_classic_menu_to_block_navigation' ) ) {
+		RetroMinimalEditorial\sync_classic_menu_to_block_navigation( $menu_id );
+		echo "  -> Synced navigation menu to wp_navigation block post\n";
+	}
+}
+
 echo "=== Seeding Complete! ===\n";

@@ -23,3 +23,4 @@ require_once __DIR__ . '/inc/color-scheme.php';
 require_once __DIR__ . '/inc/toc.php';
 require_once __DIR__ . '/inc/query.php';
 require_once __DIR__ . '/inc/bindings.php';
+require_once __DIR__ . '/inc/navigation.php';
