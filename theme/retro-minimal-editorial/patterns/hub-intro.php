@@ -18,9 +18,9 @@
 
 	<!-- wp:list {"className":"is-style-link-list"} -->
 	<ul class="wp-block-list is-style-link-list">
-		<li><span class="rme-link-label">&rarr; GitHub</span><span class="rme-link-leader" aria-hidden="true">................................................................</span><a href="https://github.com/gerald">github.com/gerald</a></li>
-		<li><span class="rme-link-label">&rarr; Writing</span><span class="rme-link-leader" aria-hidden="true">................................................................</span><a href="/blog/">Read latest posts</a></li>
-		<li><span class="rme-link-label">&rarr; Projects</span><span class="rme-link-leader" aria-hidden="true">................................................................</span><a href="/projects/">View showcase</a></li>
+		<li><span class="rme-link-label">&rarr; GitHub</span><span class="rme-link-leader" aria-hidden="true"></span><a href="https://github.com/gerald">github.com/gerald</a></li>
+		<li><span class="rme-link-label">&rarr; Writing</span><span class="rme-link-leader" aria-hidden="true"></span><a href="/blog/">Read latest posts</a></li>
+		<li><span class="rme-link-label">&rarr; Projects</span><span class="rme-link-leader" aria-hidden="true"></span><a href="/projects/">View showcase</a></li>
 	</ul>
 	<!-- /wp:list -->
 </div>

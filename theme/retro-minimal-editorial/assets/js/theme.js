@@ -21,15 +21,32 @@
 
 			var a = li.querySelector( 'a' );
 			if ( ! a ) {
-				// Also handle metadata rows with literal dots, e.g. "Year ............ 2026"
-				var text = li.textContent || '';
-				var dotMatch = text.match( /^(.*?)\s*(\.{3,})\s*(.*?)$/ );
-				if ( dotMatch ) {
-					var strong = li.querySelector( 'strong' );
-					var labelHtml = strong ? strong.outerHTML : dotMatch[1].trim();
-					var valText = dotMatch[3].trim();
+				// Handle metadata/spec rows (like "Languages ...... TypeScript" or "<strong>Title</strong> ...... Desc")
+				var strong = li.querySelector( 'strong' );
+				var labelHtml = '';
+				var valText = '';
 
+				if ( strong ) {
+					labelHtml = strong.outerHTML;
+					var fullHtml = li.innerHTML;
+					var strongHtml = strong.outerHTML;
+					var afterStrong = fullHtml.substring( fullHtml.indexOf( strongHtml ) + strongHtml.length );
+					valText = afterStrong
+						.replace( /^(&(?:hellip|#8230);|[\.\s\u2026\u00B7\u2022])+/gi, '' )
+						.trim();
+				} else {
+					var text = li.textContent || '';
+					var dotMatch = text.match( /^(.*?)\s*([\.…\u2026]{2,})\s*(.*?)$/ );
+					if ( dotMatch ) {
+						labelHtml = dotMatch[1].trim();
+						valText = dotMatch[3].trim();
+					}
+				}
+
+				if ( labelHtml && valText ) {
 					li.innerHTML = '';
+					li.classList.add( 'rme-link-item--spec' );
+
 					var lbl = document.createElement( 'span' );
 					lbl.className = 'rme-link-label';
 					lbl.innerHTML = labelHtml;
@@ -37,11 +54,10 @@
 					var ldr = document.createElement( 'span' );
 					ldr.className = 'rme-link-leader';
 					ldr.setAttribute( 'aria-hidden', 'true' );
-					ldr.textContent = '................................................................';
 
 					var val = document.createElement( 'span' );
 					val.className = 'rme-link-value';
-					val.textContent = valText;
+					val.innerHTML = valText;
 
 					li.appendChild( lbl );
 					li.appendChild( ldr );
@@ -67,8 +83,10 @@
 			}
 
 			var rawLabel = labelParts.join( '' ).trim();
-			// Strip trailing literal dots and whitespace
-			var cleanLabel = rawLabel.replace( /[\.\s]+$/, '' ).trim();
+			// Robust stripping of trailing literal dots, unicode ellipses (…), and HTML entities
+			var cleanLabel = rawLabel
+				.replace( /(&(?:hellip|#8230);|[\.\s\u2026\u00B7\u2022])+$/gi, '' )
+				.trim();
 
 			li.innerHTML = '';
 
@@ -79,7 +97,6 @@
 			var leaderSpan = document.createElement( 'span' );
 			leaderSpan.className = 'rme-link-leader';
 			leaderSpan.setAttribute( 'aria-hidden', 'true' );
-			leaderSpan.textContent = '................................................................';
 
 			var valueWrap = document.createElement( 'span' );
 			valueWrap.className = 'rme-link-value';

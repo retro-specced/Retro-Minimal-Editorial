@@ -46,9 +46,9 @@
 
 	<!-- wp:list {"className":"is-style-link-list"} -->
 	<ul class="wp-block-list is-style-link-list">
-		<li><strong>01. Full-Stack Web Architecture</strong> .......... TypeScript, React, Next.js, WordPress Block Themes, and resilient PHP/PostgreSQL backends.</li>
-		<li><strong>02. Editorial Typography &amp; UI</strong> ......... Bespoke typography systems, Newsreader &amp; JetBrains Mono pairings, and print-inspired layouts.</li>
-		<li><strong>03. Autonomous AI &amp; Vibe-Coding</strong> .......... Prompt-driven architecture, LLM agent workflows, and rapid software prototyping.</li>
+		<li class="rme-link-item--spec"><span class="rme-link-label"><strong>01. Full-Stack Web Architecture</strong></span><span class="rme-link-leader" aria-hidden="true"></span><span class="rme-link-value">TypeScript, React, Next.js, WordPress Block Themes, and resilient PHP/PostgreSQL backends.</span></li>
+		<li class="rme-link-item--spec"><span class="rme-link-label"><strong>02. Editorial Typography &amp; UI</strong></span><span class="rme-link-leader" aria-hidden="true"></span><span class="rme-link-value">Bespoke typography systems, Newsreader &amp; JetBrains Mono pairings, and print-inspired layouts.</span></li>
+		<li class="rme-link-item--spec"><span class="rme-link-label"><strong>03. Autonomous AI &amp; Vibe-Coding</strong></span><span class="rme-link-leader" aria-hidden="true"></span><span class="rme-link-value">Prompt-driven architecture, LLM agent workflows, and rapid software prototyping.</span></li>
 	</ul>
 	<!-- /wp:list -->
 
@@ -59,10 +59,10 @@
 
 	<!-- wp:list {"className":"is-style-link-list"} -->
 	<ul class="wp-block-list is-style-link-list">
-		<li><strong>Languages</strong> ..................................... TypeScript · JavaScript · PHP · Python · SQL · HTML/CSS</li>
-		<li><strong>Platforms &amp; Frameworks</strong> ..................... WordPress (Full Site Editing) · React · Next.js · Node.js · Vite</li>
-		<li><strong>Aesthetics &amp; Design</strong> ......................... Newsreader · JetBrains Mono · Design Systems · Neo-Brutalism</li>
-		<li><strong>Tooling &amp; Environment</strong> ...................... Git · Linux / Bash · VS Code · Claude · Gemini</li>
+		<li class="rme-link-item--spec"><span class="rme-link-label"><strong>Languages</strong></span><span class="rme-link-leader" aria-hidden="true"></span><span class="rme-link-value">TypeScript · JavaScript · PHP · Python · SQL · HTML/CSS</span></li>
+		<li class="rme-link-item--spec"><span class="rme-link-label"><strong>Platforms &amp; Frameworks</strong></span><span class="rme-link-leader" aria-hidden="true"></span><span class="rme-link-value">WordPress (Full Site Editing) · React · Next.js · Node.js · Vite</span></li>
+		<li class="rme-link-item--spec"><span class="rme-link-label"><strong>Aesthetics &amp; Design</strong></span><span class="rme-link-leader" aria-hidden="true"></span><span class="rme-link-value">Newsreader · JetBrains Mono · Design Systems · Neo-Brutalism</span></li>
+		<li class="rme-link-item--spec"><span class="rme-link-label"><strong>Tooling &amp; Environment</strong></span><span class="rme-link-leader" aria-hidden="true"></span><span class="rme-link-value">Git · Linux / Bash · VS Code · Claude · Gemini</span></li>
 	</ul>
 	<!-- /wp:list -->
 
@@ -85,10 +85,10 @@
 
 	<!-- wp:list {"className":"is-style-link-list"} -->
 	<ul class="wp-block-list is-style-link-list">
-		<li><span class="rme-link-label">&rarr; GitHub</span><span class="rme-link-leader" aria-hidden="true">................................................................</span><a href="https://github.com/gerald" target="_blank" rel="noopener">github.com/gerald</a></li>
-		<li><span class="rme-link-label">&rarr; X / Twitter</span><span class="rme-link-leader" aria-hidden="true">................................................................</span><a href="https://x.com/gerald" target="_blank" rel="noopener">@gerald</a></li>
-		<li><span class="rme-link-label">&rarr; Bluesky</span><span class="rme-link-leader" aria-hidden="true">................................................................</span><a href="https://bsky.app" target="_blank" rel="noopener">@gerald.bsky.social</a></li>
-		<li><span class="rme-link-label">&rarr; Email</span><span class="rme-link-leader" aria-hidden="true">................................................................</span><a href="mailto:hello@gerald.dev">hello@gerald.dev</a></li>
+		<li><span class="rme-link-label">&rarr; GitHub</span><span class="rme-link-leader" aria-hidden="true"></span><a href="https://github.com/gerald" target="_blank" rel="noopener">github.com/gerald</a></li>
+		<li><span class="rme-link-label">&rarr; X / Twitter</span><span class="rme-link-leader" aria-hidden="true"></span><a href="https://x.com/gerald" target="_blank" rel="noopener">@gerald</a></li>
+		<li><span class="rme-link-label">&rarr; Bluesky</span><span class="rme-link-leader" aria-hidden="true"></span><a href="https://bsky.app" target="_blank" rel="noopener">@gerald.bsky.social</a></li>
+		<li><span class="rme-link-label">&rarr; Email</span><span class="rme-link-leader" aria-hidden="true"></span><a href="mailto:hello@gerald.dev">hello@gerald.dev</a></li>
 	</ul>
 	<!-- /wp:list -->
 </div>
